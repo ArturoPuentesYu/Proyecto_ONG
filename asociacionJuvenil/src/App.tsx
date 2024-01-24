@@ -1,11 +1,12 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import navBar from './components/navBar/nav.tsx'
+import NavBarra from './components/navBar/nav.tsx'
+import Footer from './components/footer/footer.tsx'
 
 
 function App() {
   return (
-    navBar()
+    <><NavBarra></NavBarra><Footer></Footer></>
   )
 }
 
