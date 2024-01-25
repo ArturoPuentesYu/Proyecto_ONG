@@ -24,17 +24,12 @@ function NavBarra() {
             <Nav.Link href="#link">Quienes Somos</Nav.Link>
             <NavDropdown title="Proyectos" id="proyectos">
               <NavDropdown.Item href="#action/3.1">LGBTQ+</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                El rincón del rabano
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">El rincón del rabano</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Batucada Batucán</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="Actividades" id="actividades">
               <NavDropdown.Item href="#action/3.1">Calendario</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                El rincón del rabano
-              </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Actividades Pasadas</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Neurizate</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Diversificate</NavDropdown.Item>
