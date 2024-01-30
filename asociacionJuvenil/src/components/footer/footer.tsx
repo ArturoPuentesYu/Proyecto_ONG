@@ -31,7 +31,6 @@ function Footer() {
         // Se quita el evento cuando el componente es cargado.
         return () => window.removeEventListener('resize', sizePantallas);
     }, []);
-
     
     return (
         <footer className='bg-grey'>
@@ -158,7 +157,7 @@ function Footer() {
 
                 <Row className='mt-3 mb-0'>
                     <div className='text-center p-2'>
-                        <p>© 2024 Copyright: Asociaón Juvenil Tres Cantos</p>
+                        <p>© {new Date().getFullYear()} Copyright: Asociaón Juvenil Tres Cantos</p>
                     </div>
                 </Row>
             </Container>

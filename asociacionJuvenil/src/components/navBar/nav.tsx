@@ -13,7 +13,7 @@ function NavBarra() {
         <Navbar.Brand href="#home"> <img
               alt="Asociación Juvenil Tres Cantos"
               src={logoBrand}
-              width="40"
+              width="42"
               height="40"
               className="d-inline-block align-top"
             /></Navbar.Brand>
