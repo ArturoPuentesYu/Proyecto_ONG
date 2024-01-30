@@ -147,7 +147,7 @@ function Footer() {
 
             <Row className='mt-3 mb-0'>
                 <div className='text-center p-2'>
-                    <p>© {new Date().getFullYear()} Copyright: Asociaón Juvenil Tres Cantos</p>
+                    <p>© {new Date().getFullYear()} Copyright: Asociación Juvenil Tres Cantos</p>
                 </div>
             </Row>
         </footer>
