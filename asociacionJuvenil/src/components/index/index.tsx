@@ -39,7 +39,7 @@ function Index() {
                     </Row>
                 </Container>
 
-                {/* Slider */}
+                {/* Slider 
                 <Carousel>
                     <Carousel.Item>
                         <ExampleCarouselImage text="First slide" />
@@ -64,7 +64,7 @@ function Index() {
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                </Carousel>
+                </Carousel>*/}
             </main>
         </>
     );
