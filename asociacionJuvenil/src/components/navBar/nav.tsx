@@ -4,10 +4,35 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logoBrand from '/logoAJ3C.png'
 import './nav.css'
+import { useState, useEffect } from 'react';
+import { AlignDirection } from 'react-bootstrap/esm/types';
 
 function NavBarra() {
+
+  // Para que el menu lo muestre bien dependiendo del tamaño de pantalla. (El breakpoint no funciona bien)
+  const [alignMenu, cambioAlignMenu] = useState<AlignDirection>('end');
+
+  useEffect(() => {
+      // Funcion para añadir al evento resize de la pantalla
+      const cambio = () => {
+          
+          if (window.innerWidth <= 1124) {
+            cambioAlignMenu('start');
+          } else {
+            cambioAlignMenu('end');
+          }
+      };
+
+      cambio();
+
+
+      window.addEventListener('resize', cambio);
+
+      // Se quita el evento cuando el componente es cargado.
+      return () => window.removeEventListener('resize', cambio);
+  }, []);
+
   return (
-    
     <Navbar expand="md" className="">
       <Container>
         <Navbar.Brand href="#home"> <img
@@ -36,7 +61,7 @@ function NavBarra() {
               <NavDropdown.Item href="#action/3.3">Grafitis y murales solidarios</NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown title="Formación" id="formacion">
+            <NavDropdown align={{ xl:alignMenu}} title="Formación" id="formacion">
               <NavDropdown.Item href="#action/3.1">Curso de arte y cultura</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Voluntariado</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Sexualidad</NavDropdown.Item>
