@@ -8,7 +8,7 @@ import './nav.css'
 function NavBarra() {
   return (
     
-    <Navbar expand="lg" className="">
+    <Navbar expand="md" className="">
       <Container>
         <Navbar.Brand href="#home"> <img
               alt="Asociación Juvenil Tres Cantos"

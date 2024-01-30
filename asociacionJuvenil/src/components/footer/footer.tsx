@@ -1,34 +1,73 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Tiktok, Instagram, Facebook, Youtube, Twitter } from 'react-bootstrap-icons';
+import { Tiktok, Instagram, Facebook, Youtube, Envelope, Whatsapp } from 'react-bootstrap-icons';
 import './footer.css'
+import { useEffect, useState } from 'react';
 
 function Footer() {
+
+    // Para que en movil los iconos cambien un poco de tamaño.
+    const [iconSize, cambioIconSize] = useState(34);
+
+    useEffect(() => {
+        // Funcion para añadir al evento resize de la pantalla
+        const sizePantallas = () => {
+            
+            if (window.innerWidth <= 400) {
+                cambioIconSize(26);
+            } else if ( window.innerWidth < 800 && window.innerWidth > 400) {
+                cambioIconSize(30);
+            } else {
+                cambioIconSize(34);
+            }
+        };
+
+        sizePantallas();
+
+
+        window.addEventListener('resize', sizePantallas);
+
+        // Se quita el evento cuando el componente es cargado.
+        return () => window.removeEventListener('resize', sizePantallas);
+    }, []);
+
+    
     return (
         <footer className='bg-grey'>
-            <Container className='py-2'>
+            <Container className='pt-2 pb-0'>
                 <Row>
-                    <p className='fs-1'>Siguenos en nuestras redes</p>
+                    <p className='fs-1 mb-3'>Siguenos en nuestras redes</p>
                 </Row>
-                <Row className='text-center m-2 justify-content-center'>
-                    <Col className='col-1'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
+
+                <Row className='m-2 mb-5 justify-content-center column-gap-3'>
+                    <Col className='col' xs='1' md={1}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
                             <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                         </svg>
                     </Col>
-                    <Col className='col-1'>
-                        <Tiktok size={32}></Tiktok>
+                    <Col className='col' xs='1' md={1}>
+                        <Instagram size={iconSize}></Instagram>
                     </Col>
-                    <Col className='col-1'>
-                        <Facebook size={32}></Facebook>
+                    <Col className='col' xs='1' md={1}>
+                        <Tiktok size={iconSize}></Tiktok>
                     </Col>
-                    <Col className='col-1'>
-                        <Youtube size={32}></Youtube>
+                    <Col className='col' xs='1' md={1}>
+                        <Facebook size={iconSize}></Facebook>
+                    </Col>
+                    <Col className='col' xs='1' md={1}>
+                        <Youtube size={iconSize}></Youtube>
+                    </Col>
+                    <Col className='col' xs='1' md={1}>
+                        <Envelope size={iconSize}></Envelope>
+                    </Col>
+                    <Col className='col' xs='1' md={1}>
+                        <Whatsapp size={iconSize}></Whatsapp>
                     </Col>
                 </Row>
-                <Row >
-                    <Col className='border-left'>
+
+                <Row className='row-gap-2'>
+                    <Col className='border-left' xs={6} md={6} lg={3}>
                         <Container>
                             <Row>
                                 <Col><h5>Inicio</h5></Col>
@@ -38,7 +77,7 @@ function Footer() {
                             </Row>
                         </Container>
                     </Col>
-                    <Col className='border-left'>
+                    <Col className='border-left' xs={6} md={6} lg={3}>
                         <Container>
                             <Row>
                                 <Col><h5>Proyectos</h5></Col>
@@ -62,7 +101,7 @@ function Footer() {
                             </ul>
                         </Container>
                     </Col>
-                    <Col className='border-left'>
+                    <Col className='border-left' xs={6} md={6} lg={3}>
                         <Container>
                             <Row>
                                 <Col><h5>Actividades</h5></Col>
@@ -91,7 +130,7 @@ function Footer() {
                             </ul>
                         </Container>
                     </Col>
-                    <Col className='border-left'>
+                    <Col className='border-left' xs={6} md={6} lg={3}>
                         <Container>
                             <Row>
                                 <Col><h5>Formación</h5></Col>
@@ -116,7 +155,8 @@ function Footer() {
                         </Container>
                     </Col>
                 </Row>
-                <Row>
+
+                <Row className='mt-3 mb-0'>
                     <div className='text-center p-2'>
                         <p>© 2024 Copyright: Asociaón Juvenil Tres Cantos</p>
                     </div>
