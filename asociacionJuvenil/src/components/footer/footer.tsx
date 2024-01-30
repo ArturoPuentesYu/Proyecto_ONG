@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { Tiktok, Instagram, Facebook, Youtube, Envelope, Whatsapp, GeoAltFill, Telephone } from 'react-bootstrap-icons';
 import './footer.css'
 import { useEffect, useState } from 'react';
+import { REDES } from '../../assets/strings';
 
 function Footer() {
 
@@ -60,7 +61,7 @@ function Footer() {
                         </svg>
                     </Col>
                     <Col className='col text-center' xs='1' md={1}>
-                        <Instagram size={iconSize}></Instagram>
+                        <Instagram size={iconSize} href={REDES.INSTAGRAM}></Instagram>
                     </Col>
                     <Col className='col text-center' xs='1' md={1}>
                         <Tiktok size={iconSize}></Tiktok>
