@@ -1,3 +1,4 @@
+import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -8,6 +9,7 @@ function NavBarra() {
   return (
     
     <Navbar expand="md" className="">
+      <Container>
         <Navbar.Brand href="#home"> <img
               alt="Asociación Juvenil Tres Cantos"
               src={logoBrand}
@@ -41,6 +43,7 @@ function NavBarra() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+      </Container>
     </Navbar>
     
   );
