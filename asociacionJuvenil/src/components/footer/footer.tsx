@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Tiktok, Instagram, Facebook, Youtube, Envelope, Whatsapp } from 'react-bootstrap-icons';
+import { Tiktok, Instagram, Facebook, Youtube, Envelope, Whatsapp, GeoAltFill, Telephone } from 'react-bootstrap-icons';
 import './footer.css'
 import { useEffect, useState } from 'react';
 
@@ -35,32 +35,46 @@ function Footer() {
     return (
         <footer className='bg-grey'>
             <Container className='pt-2 pb-0'>
+            <h6 className='text-uppercase fw-bold mb-4'>Contacto</h6>
+              <p>
+                <GeoAltFill color='secondary' className='me-3' />
+                Sector Literatos, 12, 28760 Tres Cantos, Madrid
+              </p>
+              <p>
+                <Envelope color='secondary' className='me-3' />
+                asociacionjuvenil3c@gmail.com
+              </p>
+              <p>
+                <Telephone color='secondary' className='me-3' /> +34 654 978 502
+              </p>
+            </Container>
+            <Container className='pt-2 pb-0'>
                 <Row>
                     <p className='fs-1 mb-3'>Siguenos en nuestras redes</p>
                 </Row>
 
-                <Row className='m-2 mb-5 justify-content-center column-gap-3'>
-                    <Col className='col' xs='1' md={1}>
+                <Row className='m-2 mb-5 justify-content-center'>
+                    <Col className='col text-center' xs='1' md={1}>
                         <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
                             <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                         </svg>
                     </Col>
-                    <Col className='col' xs='1' md={1}>
+                    <Col className='col text-center' xs='1' md={1}>
                         <Instagram size={iconSize}></Instagram>
                     </Col>
-                    <Col className='col' xs='1' md={1}>
+                    <Col className='col text-center' xs='1' md={1}>
                         <Tiktok size={iconSize}></Tiktok>
                     </Col>
-                    <Col className='col' xs='1' md={1}>
+                    <Col className='col text-center' xs='1' md={1}>
                         <Facebook size={iconSize}></Facebook>
                     </Col>
-                    <Col className='col' xs='1' md={1}>
+                    <Col className='col text-center' xs='1' md={1}>
                         <Youtube size={iconSize}></Youtube>
                     </Col>
-                    <Col className='col' xs='1' md={1}>
+                    <Col className='col text-center' xs='1' md={1}>
                         <Envelope size={iconSize}></Envelope>
                     </Col>
-                    <Col className='col' xs='1' md={1}>
+                    <Col className='col text-center' xs='1' md={1}>
                         <Whatsapp size={iconSize}></Whatsapp>
                     </Col>
                 </Row>
@@ -168,21 +182,3 @@ function Footer() {
 
 export default Footer
 
-
-{/* <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-              <p>
-                <MDBIcon color='secondary' icon='home' className='me-2' />
-                New York, NY 10012, US
-              </p>
-              <p>
-                <MDBIcon color='secondary' icon='envelope' className='me-3' />
-                info@example.com
-              </p>
-              <p>
-                <MDBIcon color='secondary' icon='phone' className='me-3' /> + 01 234 567 88
-              </p>
-              <p>
-                <MDBIcon color='secondary' icon='print' className='me-3' /> + 01 234 567 89
-              </p>
-            </MDBCol> */}
