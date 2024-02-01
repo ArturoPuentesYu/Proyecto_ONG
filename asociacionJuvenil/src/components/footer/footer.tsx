@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { Tiktok, Instagram, Facebook, Youtube, Envelope, Whatsapp, GeoAltFill } from 'react-bootstrap-icons';
 import './footer.css'
 import { useEffect, useState } from 'react';
-import { REDES } from '../../assets/strings';
+import { REDES } from '../../data/strings';
 
 function Footer() {
 
