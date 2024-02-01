@@ -3,30 +3,29 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import './index.css'
-import imagenLogo from '/LogoVectorizado.svg';
-import Carousel from 'react-bootstrap/Carousel';
+//import Carousel from 'react-bootstrap/Carousel';
+import {INICIO} from '../../assets/strings';
+
 
 function Index() {
     return (
         <>
             <main>
-                <Container>
-                    <Row>
-                        <Col className='text-center col-auto'>
-                            <img src={imagenLogo} alt="imagen del logo" width={500} />
+                <Container className=''>
+                    <Row className='direccion_flex'>
+                        <Col className='text-center'>
+                            <img src={INICIO.IMAGEN1} alt="imagen del logo" />
                         </Col>
                         <Col>
-                            <Container fluid>
+                            <Container>
                                 <Row>
                                     <Col>
-                                        <h1>Asociacón Juvenil de Tres Cantos</h1>
+                                        <h1 dangerouslySetInnerHTML={{__html: INICIO.TITULO}}></h1>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col>
-                                        <p>
-                                            La Asociación Juvenil por el Ocio Alternativo Tres Cantos (AJ3C) es una entidad sin ánimo de lucro que lleva desde 2007 actuando en #TresCantos y colaborando con el #Ayuntamiento. Nuestro objetivo es ofrecer un ocio alternativo, sano y asequible a los jóvenes del municipio, además de apoyarles en sus proyectos...
-                                        </p>
+                                        <p dangerouslySetInnerHTML={{ __html: INICIO.TEXTO_ONG }} />
                                     </Col>
                                 </Row>
                                 <Row>

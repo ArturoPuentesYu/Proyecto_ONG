@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Tiktok, Instagram, Facebook, Youtube, Envelope, Whatsapp, GeoAltFill, Telephone } from 'react-bootstrap-icons';
+import { Tiktok, Instagram, Facebook, Youtube, Envelope, Whatsapp, GeoAltFill } from 'react-bootstrap-icons';
 import './footer.css'
 import { useEffect, useState } from 'react';
 import { REDES } from '../../assets/strings';
@@ -36,25 +36,8 @@ function Footer() {
     return (
         <footer className='bg-grey'>
             <Container className='pt-2 pb-0'>
-            <h6 className='text-uppercase fw-bold mb-4'>Contacto</h6>
-              <p>
-                <GeoAltFill color='secondary' className='me-3' />
-                Sector Literatos, 12, 28760 Tres Cantos, Madrid
-              </p>
-              <p>
-                <Envelope color='secondary' className='me-3' />
-                asociacionjuvenil3c@gmail.com
-              </p>
-              <p>
-                <Telephone color='secondary' className='me-3' /> +34 654 978 502
-              </p>
-            </Container>
-            <Container className='pt-2 pb-0'>
-                <Row>
-                    <p className='fs-1 mb-3'>Siguenos en nuestras redes</p>
-                </Row>
 
-                <Row className='m-2 mb-5 justify-content-center'>
+                <Row className='m-2 mb-3 justify-content-center'>
                     <Col className='col text-center' xs='1' md={1}>
                         <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
                             <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
@@ -79,7 +62,12 @@ function Footer() {
                         <Whatsapp size={iconSize}></Whatsapp>
                     </Col>
                 </Row>
-
+                <Row className='mb-2'>
+                    <p className='text-center'>
+                        <GeoAltFill color='secondary' className='me-3' />
+                        Sector Literatos, 12, 28760 Tres Cantos, Madrid
+                    </p>
+                </Row>
                 <Row className='row-gap-2'>
                     <Col className='border-left' xs={6} md={6} lg={3}>
                         <Container>
@@ -171,9 +159,7 @@ function Footer() {
                 </Row>
 
                 <Row className='mt-3 mb-0'>
-                    <div className='text-center p-2'>
-                        <p>© {new Date().getFullYear()} Copyright: Asociación Juvenil Tres Cantos</p>
-                    </div>
+                        <p className='text-center p-2'>© {new Date().getFullYear()} Copyright: Asociación Juvenil Tres Cantos</p>
                 </Row>
             </Container>
         </footer>
