@@ -5,3 +5,8 @@
 footer {
     background-color: #FF92C9;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
