@@ -5,17 +5,47 @@ import Button from 'react-bootstrap/Button';
 import './index.css'
 import imagenLogo from '/LogoVectorizado.svg';
 import Carousel from 'react-bootstrap/Carousel';
+import { useState, useEffect } from 'react';
+import Foto1 from '../../assets/sliderIndex/foto1.jpeg'
+import Foto2 from '../../assets/sliderIndex/foto2.jpg'
+import Foto3 from '../../assets/sliderIndex/foto3.jpg'
+import Foto4 from '../../assets/sliderIndex/foto4.jpg'
+import Foto5 from '../../assets/sliderIndex/foto5.jpg'
 
 function Index() {
+        // Para que en movil los iconos cambien un poco de tamaño.
+        const [logoSize, cambioIconSize] = useState(34);
+
+        useEffect(() => {
+            // Funcion para añadir al evento resize de la pantalla
+            const sizePantallas = () => {
+                
+                if (window.innerWidth <= 400) {
+                    cambioIconSize(220);
+                } else if ( window.innerWidth < 800 && window.innerWidth > 400) {
+                    cambioIconSize(350);
+                } else {
+                    cambioIconSize(500);
+                }
+            };
+    
+            sizePantallas();
+    
+    
+            window.addEventListener('resize', sizePantallas);
+    
+            // Se quita el evento cuando el componente es cargado.
+            return () => window.removeEventListener('resize', sizePantallas);
+        }, []);
     return (
         <>
             <main>
                 <Container>
-                    <Row>
-                        <Col className='text-center col-auto'>
-                            <img src={imagenLogo} alt="imagen del logo" width={500} />
+                    <Row className='align-items-center justify-content-center'>
+                        <Col className='text-center' md={6}>
+                            <img src={imagenLogo} alt="imagen del logo" width={logoSize} />
                         </Col>
-                        <Col>
+                        <Col sm={10} md={6}>
                             <Container fluid>
                                 <Row>
                                     <Col>
@@ -39,24 +69,24 @@ function Index() {
                     </Row>
                 </Container>
 
-                {/* Slider 
+                
                 <Carousel>
                     <Carousel.Item>
-                        <ExampleCarouselImage text="First slide" />
+                        <img src={Foto1} alt="foto slider 1" />
                         <Carousel.Caption>
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <ExampleCarouselImage text="Second slide" />
+                    <img src={Foto2} alt="foto slider 2" />
                         <Carousel.Caption>
                             <h3>Second slide label</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <ExampleCarouselImage text="Third slide" />
+                    <img src={Foto3} alt="foto slider 3" />
                         <Carousel.Caption>
                             <h3>Third slide label</h3>
                             <p>
@@ -64,7 +94,25 @@ function Index() {
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                </Carousel>*/}
+                    <Carousel.Item>
+                    <img src={Foto4} alt="foto slider 4" />
+                        <Carousel.Caption>
+                            <h3>Third slide label</h3>
+                            <p>
+                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                            </p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                    <img src={Foto5} alt="foto slider 5" />
+                        <Carousel.Caption>
+                            <h3>Third slide label</h3>
+                            <p>
+                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                            </p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
             </main>
         </>
     );
