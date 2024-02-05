@@ -35,7 +35,7 @@ function NavBarra() {
   return (
     <Navbar expand="md" className="">
       <Container>
-        <Navbar.Brand href="#home"> <img
+        <Navbar.Brand href="/"> <img
               alt="Asociación Juvenil Tres Cantos"
               src={logoBrand}
               width="42"
@@ -45,8 +45,8 @@ function NavBarra() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#link">Quienes Somos</Nav.Link>
+            <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link href="/quienes_somos">Quienes Somos</Nav.Link>
             <NavDropdown title="Proyectos" id="proyectos">
               <NavDropdown.Item href="#action/3.1">LGBTQ+</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">El rincón del rabano</NavDropdown.Item>
