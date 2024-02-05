@@ -5,8 +5,6 @@ import Carousel from '../carousel'
 
 const Quienes_somos = () => {
 
-    
-
     return (
       <main>
         <Container fluid='sm'>
@@ -45,8 +43,8 @@ const Quienes_somos = () => {
             <Row>
                 <section>
                     <h2>{QUIENES_SOMOS.COLABORACIONES_TITULO}</h2>
-                    <Carousel imagenes={QUIENES_SOMOS.COLABORACIONES}></Carousel>
-                    /*{QUIENES_SOMOS.COLABORACIONES.map((colaborador) => 
+                    /*<Carousel imagenes={QUIENES_SOMOS.COLABORACIONES}></Carousel>
+                    {QUIENES_SOMOS.COLABORACIONES.map((colaborador) => 
                         <img src={colaborador.url} alt={colaborador.alt}></img>)}*/
                 </section>
             </Row>
