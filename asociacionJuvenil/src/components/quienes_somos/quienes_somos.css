@@ -1,0 +1,15 @@
+p {
+    text-align: justify;
+}
+h2 {
+    color: #FF92C9;
+    font-weight: bold;
+}
+h1 {
+    font-weight: bold;
+}
+.bgcolor {
+    background-color: #FF92C9;
+    padding: 1%;
+    border-radius: 10px;
+}

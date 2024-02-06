@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+<<<<<<< HEAD
 import Card from 'react-bootstrap/Card';
 import './index.css'
 import imagenLogo from '/LogoVectorizado.svg';
@@ -12,6 +13,11 @@ import Foto2 from '../../assets/sliderIndex/foto2.jpg'
 import Foto3 from '../../assets/sliderIndex/foto3.jpg'
 import Foto4 from '../../assets/sliderIndex/foto4.jpg'
 import Foto5 from '../../assets/sliderIndex/foto5.jpg'
+=======
+//import Carousel from 'react-bootstrap/Carousel';
+import {INICIO} from '../../data/strings';
+
+>>>>>>> origin/victor
 
 function Index() {
     // Para que en movil los iconos cambien un poco de tamaño.
@@ -41,6 +47,7 @@ function Index() {
     return (
         <>
             <main>
+<<<<<<< HEAD
                 <Container>
                     <Row className='align-items-center justify-content-center'>
                         <Col className='text-center' md={6}>
@@ -48,16 +55,23 @@ function Index() {
                         </Col>
                         <Col sm={10} md={6}>
                             <Container fluid>
+=======
+                <Container fluid='sm'>
+                    <Row className='direccion_flex' xs={1} md={2} xl={2}>
+                        <Col className='text-center'>
+                            <img src={INICIO.IMAGEN1} alt="imagen del logo" />
+                        </Col>
+                        <Col>
+                            <Container>
+>>>>>>> origin/victor
                                 <Row>
                                     <Col>
-                                        <h1>Asociacón Juvenil de Tres Cantos</h1>
+                                        <h1 dangerouslySetInnerHTML={{__html: INICIO.TITULO}}></h1>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col>
-                                        <p>
-                                            La Asociación Juvenil por el Ocio Alternativo Tres Cantos (AJ3C) es una entidad sin ánimo de lucro que lleva desde 2007 actuando en #TresCantos y colaborando con el #Ayuntamiento. Nuestro objetivo es ofrecer un ocio alternativo, sano y asequible a los jóvenes del municipio, además de apoyarles en sus proyectos...
-                                        </p>
+                                        <p dangerouslySetInnerHTML={{ __html: INICIO.TEXTO_ONG }} />
                                     </Col>
                                 </Row>
                                 <Row>

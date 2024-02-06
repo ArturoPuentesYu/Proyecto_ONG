@@ -1,57 +1,23 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Tiktok, Instagram, Facebook, Youtube, Envelope, Whatsapp, GeoAltFill, Telephone } from 'react-bootstrap-icons';
+import { GeoAltFill } from 'react-bootstrap-icons';
 import './footer.css'
-import { useEffect, useState } from 'react';
+import Redes from '../redes_sociales_barra';
 
 function Footer() {
-
-    // Para que en movil los iconos cambien un poco de tamaño.
-    const [iconSize, cambioIconSize] = useState(34);
-
-    useEffect(() => {
-        // Funcion para añadir al evento resize de la pantalla
-        const sizePantallas = () => {
-            
-            if (window.innerWidth <= 400) {
-                cambioIconSize(26);
-            } else if ( window.innerWidth < 800 && window.innerWidth > 400) {
-                cambioIconSize(30);
-            } else {
-                cambioIconSize(34);
-            }
-        };
-
-        sizePantallas();
-
-
-        window.addEventListener('resize', sizePantallas);
-
-        // Se quita el evento cuando el componente es cargado.
-        return () => window.removeEventListener('resize', sizePantallas);
-    }, []);
     
     return (
         <footer className='bg-grey'>
             <Container className='pt-2 pb-0'>
-            <h6 className='text-uppercase fw-bold mb-4'>Contacto</h6>
-              <p>
-                <GeoAltFill color='secondary' className='me-3' />
-                Sector Literatos, 12, 28760 Tres Cantos, Madrid
-              </p>
-              <p>
-                <Envelope color='secondary' className='me-3' />
-                asociacionjuvenil3c@gmail.com
-              </p>
-              <p>
-                <Telephone color='secondary' className='me-3' /> +34 654 978 502
-              </p>
-            </Container>
-            <Container className='pt-2 pb-0'>
-                <Row>
-                    <p className='fs-1 mb-3'>Siguenos en nuestras redes</p>
+                <Redes></Redes>
+                <Row className='mb-2'>
+                    <p className='text-center'>
+                        <GeoAltFill color='secondary' className='me-3' />
+                        Sector Literatos, 12, 28760 Tres Cantos, Madrid
+                    </p>
                 </Row>
+<<<<<<< HEAD
 
                 <Row className='m-2 mb-5 justify-content-center'>
                     <Col className='col text-center' xs='1' md={1}>
@@ -79,6 +45,8 @@ function Footer() {
                     </Col>
                 </Row>
 
+=======
+>>>>>>> origin/victor
                 <Row className='row-gap-2'>
                     <Col className='border-left' xs={6} md={6} lg={3}>
                         <Container>
@@ -170,9 +138,7 @@ function Footer() {
                 </Row>
 
                 <Row className='mt-3 mb-0'>
-                    <div className='text-center p-2'>
-                        <p>© {new Date().getFullYear()} Copyright: Asociación Juvenil Tres Cantos</p>
-                    </div>
+                        <p className='text-center p-2'>© {new Date().getFullYear()} Copyright: Asociación Juvenil Tres Cantos</p>
                 </Row>
             </Container>
         </footer>
