@@ -17,36 +17,6 @@ function Footer() {
                         Sector Literatos, 12, 28760 Tres Cantos, Madrid
                     </p>
                 </Row>
-<<<<<<< HEAD
-
-                <Row className='m-2 mb-5 justify-content-center'>
-                    <Col className='col text-center' xs='1' md={1}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
-                            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
-                        </svg>
-                    </Col>
-                    <Col className='text-center' xs='1' md={1}>
-                        <Instagram size={iconSize}></Instagram>
-                    </Col>
-                    <Col className='text-center' xs='1' md={1}>
-                        <Tiktok size={iconSize}></Tiktok>
-                    </Col>
-                    <Col className='text-center' xs='1' md={1}>
-                        <Facebook size={iconSize}></Facebook>
-                    </Col>
-                    <Col className='text-center' xs='1' md={1}>
-                        <Youtube size={iconSize}></Youtube>
-                    </Col>
-                    <Col className='text-center' xs='1' md={1}>
-                        <Envelope size={iconSize}></Envelope>
-                    </Col>
-                    <Col className='text-center' xs='1' md={1}>
-                        <Whatsapp size={iconSize}></Whatsapp>
-                    </Col>
-                </Row>
-
-=======
->>>>>>> origin/victor
                 <Row className='row-gap-2'>
                     <Col className='border-left' xs={6} md={6} lg={3}>
                         <Container>
