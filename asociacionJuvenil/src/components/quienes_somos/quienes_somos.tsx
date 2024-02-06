@@ -1,10 +1,9 @@
 import { Container, Row } from 'react-bootstrap'
 import {QUIENES_SOMOS} from './../../data/strings'
 import './quienes_somos.css'
-import Carousel from '../carousel'
+import Carousel from '../carousel/carousel_sin_texto'
 
 const Quienes_somos = () => {
-
     return (
       <main>
         <Container fluid='sm'>
@@ -41,11 +40,9 @@ const Quienes_somos = () => {
                 </section>
             </Row>
             <Row>
-                <section>
-                    <h2>{QUIENES_SOMOS.COLABORACIONES_TITULO}</h2>
-                    /*<Carousel imagenes={QUIENES_SOMOS.COLABORACIONES}></Carousel>
-                    {QUIENES_SOMOS.COLABORACIONES.map((colaborador) => 
-                        <img src={colaborador.url} alt={colaborador.alt}></img>)}*/
+                <section className='mb-3'>
+                    <h2 className='mb-3'>{QUIENES_SOMOS.COLABORACIONES_TITULO}</h2>
+                    <Carousel imagenes={QUIENES_SOMOS.COLABORACIONES}></Carousel>
                 </section>
             </Row>
         </Container>

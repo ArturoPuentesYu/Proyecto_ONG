@@ -1,0 +1,7 @@
+.carousel-indicators button[aria-current="true"] {
+    background-color: red; 
+}
+
+.carousel-indicators button[aria-current="false"] {
+    background-color: black; 
+}
