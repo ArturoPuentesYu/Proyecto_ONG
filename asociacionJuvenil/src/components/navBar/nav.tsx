@@ -35,7 +35,7 @@ function NavBarra() {
   return (
     <Navbar expand="md" className="">
       <Container>
-        <Navbar.Brand href="#home"> <img
+        <Navbar.Brand href='/'> <img
               alt="Asociación Juvenil Tres Cantos"
               src={logoBrand}
               width="42"
@@ -45,26 +45,28 @@ function NavBarra() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#link">Quienes Somos</Nav.Link>
+            <Nav.Link href="/">Inicio</Nav.Link>
+            <Nav.Link href="/quienes_somos">Quienes Somos</Nav.Link>
             <NavDropdown title="Proyectos" id="proyectos">
-              <NavDropdown.Item href="#action/3.1">LGBTQ+</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">El rincón del rabano</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Batucada Batucán</NavDropdown.Item>
+              <NavDropdown.Item href="/Proyectos/Lgtbiq">LGBTQ+</NavDropdown.Item>
+              <NavDropdown.Item href="/Proyectos/Rincon_del_rabano">El rincón del rabano</NavDropdown.Item>
+              <NavDropdown.Item href="/Proyectos/Batucada_batucan">Batucada Batucán</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="Actividades" id="actividades">
-              <NavDropdown.Item href="#action/3.1">Calendario</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Actividades Pasadas</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Neurizate</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Diversificate</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Grafitis y murales solidarios</NavDropdown.Item>
+              <NavDropdown.Item href="/Actividades/Calendario">Calendario</NavDropdown.Item>
+              <NavDropdown.Item href="/Actividades/Actividades_pasadas">Actividades Pasadas</NavDropdown.Item>
+              <NavDropdown.Item href="/Actividades/Neuronizate">Neurizate</NavDropdown.Item>
+              <NavDropdown.Item href="/Actividades/Diversificate">Diversificate</NavDropdown.Item>
+              <NavDropdown.Item href="/Actividades/Grafitis">Grafitis y murales solidarios</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown align={{ xl:alignMenu}} title="Formación" id="formacion">
-              <NavDropdown.Item href="#action/3.1">Curso de arte y cultura</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Voluntariado</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Sexualidad</NavDropdown.Item>
+              <NavDropdown.Item href="/Formacion/Curso_premonis">Curso de premonis</NavDropdown.Item>
+              <NavDropdown.Item href="/Formacion/Curso_monitor">Curso de monitor de ocio y tiempo libre</NavDropdown.Item>
+              <NavDropdown.Item href="/Formacion/Curso_arte_y_cultura">Curso de arte y cultura</NavDropdown.Item>
+              <NavDropdown.Item href="/Formacion/Voluntariado">Voluntariado</NavDropdown.Item>
+              <NavDropdown.Item href="/Formacion/Sexualidad">Sexualidad</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

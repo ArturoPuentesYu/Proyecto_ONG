@@ -12,6 +12,70 @@ const router = createBrowserRouter([
   {
     "path": "/quienes_somos",
     "element": <Quienes_somos />
+  }, ///
+  {
+    "path": "/Actividades",
+    "element": <Index />
+  }, 
+  {
+    "path": "/Proyectos",
+    "element": <Index />
+  },
+  {
+    "path": "/Formacion",
+    "element": <Index />
+  }, ///
+  {
+    "path": "/Proyectos/Lgtbiq",
+    "element": <Index />
+  },
+  {
+    "path": "/Proyectos/Rincon_del_rabano",
+    "element": <Index />
+  },
+  {
+    "path": "/Proyectos/Batucada_batucan",
+    "element": <Index />
+  }, ///
+  {
+    "path": "/Actividades/Calendario",
+    "element": <Index />
+  },
+  {
+    "path": "/Actividades/Actividades_pasadas",
+    "element": <Index />
+  },
+  {
+    "path": "/Actividades/Neuronizate",
+    "element": <Index />
+  },
+  {
+    "path": "/Actividades/Diversificate",
+    "element": <Index />
+  },
+  {
+    "path": "/Actividades/Grafitis",
+    "element": <Index />
+  }, ///
+  {
+    "path": "/Formacion/Curso_premonis",
+    "element": <Index />
+  },
+  {
+    "path": "/Formacion/Curso_monitor",
+    "element": <Index />
+  },
+  {
+    "path": "/Formacion/Curso_arte_y_cultura",
+    "element": <Index />
+  },
+  {
+    "path": "/Formacion/Voluntariado",
+    "element": <Index />
+  },
+  {
+    "path": "/Formacion/Sexualidad",
+    "element": <Index />
   }
 ]);
 
