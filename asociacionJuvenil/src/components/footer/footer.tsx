@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { GeoAltFill } from 'react-bootstrap-icons';
 import './footer.css'
 import Redes from '../redes_sociales_barra';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     
@@ -21,7 +22,7 @@ function Footer() {
                     <Col className='border-left' xs={6} md={6} lg={3}>
                         <Container>
                             <Row>
-                                <Col><h5>Inicio</h5></Col>
+                                <Col><Link to='/'><h5>Inicio</h5></Link></Col>
                             </Row>
                             <Row>
                                 <Col><h5>Quienes Somos</h5></Col>

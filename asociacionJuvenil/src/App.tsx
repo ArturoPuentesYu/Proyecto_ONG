@@ -1,84 +1,86 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Index from './components/index/index.tsx';
-import Quienessomos from './components/quienes_somos/quienes_somos.tsx';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Index from './components/index/index';
+import Quienes_somos from './components/quienes_somos/quienes_somos';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import NavBarra from './components/navBar/nav';
+import Footer from './components/footer/footer';
 
 const router = createBrowserRouter([
   {
-    'path': "/",
-    'element':<Index/>
+    "path": "/",
+    "element": <><NavBarra /><Index/><Footer /></>
   },
   {
     "path": "/quienes_somos",
-    "element": <Quienes_somos />
+    "element": <><NavBarra /><Quienes_somos /><Footer /></>
   }, ///
   {
     "path": "/Actividades",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   }, 
   {
     "path": "/Proyectos",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Formacion",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   }, ///
   {
     "path": "/Proyectos/Lgtbiq",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Proyectos/Rincon_del_rabano",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Proyectos/Batucada_batucan",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   }, ///
   {
     "path": "/Actividades/Calendario",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Actividades/Actividades_pasadas",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Actividades/Neuronizate",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Actividades/Diversificate",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Actividades/Grafitis",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   }, ///
   {
     "path": "/Formacion/Curso_premonis",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Formacion/Curso_monitor",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Formacion/Curso_arte_y_cultura",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Formacion/Voluntariado",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
   },
   {
     "path": "/Formacion/Sexualidad",
-    "element": <Index />
+    "element": <><NavBarra /><Index /><Footer /></>
 
   }
-])
+], )
 
 function App() {
   return(<RouterProvider router={router}/>);
