@@ -8,9 +8,9 @@ import Redes from '../redes_sociales_barra';
 function Footer() {
     
     return (
-        <footer className='bg-grey'>
+        <footer>
             <Container className='pt-2 pb-0'>
-                <Redes></Redes>
+                <Redes/>
                 <Row className='mb-2'>
                     <p className='text-center'>
                         <GeoAltFill color='secondary' className='me-3' />
