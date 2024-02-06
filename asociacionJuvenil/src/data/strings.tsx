@@ -45,7 +45,7 @@ export const QUIENES_SOMOS = {
         { url: "", alt: "Logo Colaborador Campeonato Let's Move" }, 
         { url: "", alt: "Logo Colaborador Comunidad de Madrid" }, 
         { url: "", alt: "Logo Colaborador Ayuntamiento Tres Cantos" }, 
-        { url: "", alt: "Logo Colaborador Joven Comunidad de Madrid" }, 
+        { url: "joven.png", alt: "Logo Colaborador Joven Comunidad de Madrid" }, 
         { url: "", alt: "Logo Colaborador Concejalia de Juventus del Ayuntamiento de Tres Cantos" }, 
         { url: "", alt: "Logo Colaborador Comunidad Por el clima" }, 
         { url: "", alt: "Logo Colaborador Arelita" }, 
