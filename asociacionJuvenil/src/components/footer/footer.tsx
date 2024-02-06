@@ -25,7 +25,7 @@ function Footer() {
                                 <Col><Link to='/'><h5>Inicio</h5></Link></Col>
                             </Row>
                             <Row>
-                                <Col><h5>Quienes Somos</h5></Col>
+                                <Col><a href="/quienes_somos"><h5>Quienes Somos</h5></a></Col>
                             </Row>
                         </Container>
                     </Col>
