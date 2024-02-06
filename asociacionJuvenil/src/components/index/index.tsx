@@ -2,24 +2,58 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import './index.css'
+import Carousel from 'react-bootstrap/Carousel';
+import { useState, useEffect } from 'react';
+import Foto1 from '../../assets/sliderIndex/foto1.jpeg'
+import Foto2 from '../../assets/sliderIndex/foto2.jpg'
+import Foto3 from '../../assets/sliderIndex/foto3.jpg'
+import Foto4 from '../../assets/sliderIndex/foto4.jpg'
+import Foto5 from '../../assets/sliderIndex/foto5.jpg'
 //import Carousel from 'react-bootstrap/Carousel';
-import {INICIO} from '../../data/strings';
+import { INICIO } from '../../data/strings';
+
+import IndexCards from "./index_cards";
 
 
 function Index() {
+    // Para que en movil los iconos cambien un poco de tamaño.
+    const [logoSize, cambioIconSize] = useState(34);
+
+    useEffect(() => {
+        // Funcion para añadir al evento resize de la pantalla
+        const sizePantallas = () => {
+
+            if (window.innerWidth <= 400) {
+                cambioIconSize(220);
+            } else if (window.innerWidth < 800 && window.innerWidth > 400) {
+                cambioIconSize(350);
+            } else {
+                cambioIconSize(500);
+            }
+        };
+
+        sizePantallas();
+
+
+        window.addEventListener('resize', sizePantallas);
+
+        // Se quita el evento cuando el componente es cargado.
+        return () => window.removeEventListener('resize', sizePantallas);
+    }, []);
     return (
         <>
             <main>
-                <Container fluid='sm'>
-                    <Row className='direccion_flex' xs={1} md={2} xl={2}>
+                <Container fluid='sm' className='mb-2'>
+                    <Row className='direccion_flex align-items-center justify-content-center' xs={1} md={2} xl={2}>
                         <Col className='text-center'>
-                            <img src={INICIO.IMAGEN1} alt="imagen del logo" />
+                            <img src={INICIO.IMAGEN1} alt="imagen del logo" width={logoSize} />
                         </Col>
                         <Col>
                             <Container>
                                 <Row>
                                     <Col>
-                                        <h1 dangerouslySetInnerHTML={{__html: INICIO.TITULO}}></h1>
+                                        <h1 dangerouslySetInnerHTML={{ __html: INICIO.TITULO }}></h1>
                                     </Col>
                                 </Row>
                                 <Row>
@@ -29,7 +63,7 @@ function Index() {
                                 </Row>
                                 <Row>
                                     <Col align="end">
-                                        <Button variant="info">Leer Más</Button>
+                                        <Button>Leer Más</Button>
                                     </Col>
                                 </Row>
                             </Container>
@@ -37,32 +71,41 @@ function Index() {
                     </Row>
                 </Container>
 
-                {/* Slider 
+
                 <Carousel>
                     <Carousel.Item>
-                        <ExampleCarouselImage text="First slide" />
+                        <img src={Foto1} alt="foto slider 1" className='w-100' />
                         <Carousel.Caption>
                             <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <ExampleCarouselImage text="Second slide" />
+                        <img src={Foto2} alt="foto slider 2" className='w-100' />
                         <Carousel.Caption>
                             <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <ExampleCarouselImage text="Third slide" />
+                        <img src={Foto3} alt="foto slider 3" className='w-100' />
                         <Carousel.Caption>
                             <h3>Third slide label</h3>
-                            <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                            </p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                </Carousel>*/}
+                    <Carousel.Item>
+                        <img src={Foto4} alt="foto slider 4" className='w-100' />
+                        <Carousel.Caption>
+                            <h3>slide label</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src={Foto5} alt="foto slider 5" className='w-100' />
+                        <Carousel.Caption>
+                            <h3>slide label</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+
+                <IndexCards />
             </main>
         </>
     );
