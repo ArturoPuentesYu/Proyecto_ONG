@@ -9,11 +9,18 @@ import IndexCards from "../../components/index_cards";
 import CarouselC from '../../components/carousel/carousel_sin_texto';
 
 
-function Index() {
+async function Index() {
     // Para que en movil los iconos cambien un poco de tamaño.
     const [logoSize, cambioIconSize] = useState(34);
+    //const [textos, cambioInicio] = useState("");
 
+    
     useEffect(() => {
+        /*fetch("http://127.0.0.1:3000/")
+            .then(json => json.json())
+            .then(data => cambioInicio(data[0]))
+            .catch(error => console.log(error));*/
+        
         // Funcion para añadir al evento resize de la pantalla
         const sizePantallas = () => {
 
@@ -34,6 +41,10 @@ function Index() {
         // Se quita el evento cuando el componente es cargado.
         return () => window.removeEventListener('resize', sizePantallas);
     }, []);
+
+    /*if (!textos) {
+        return <p>Cargando...</p>; // Renderiza un mensaje de carga si textos aún es un Promise
+    }*/
 
     return (
         <>
