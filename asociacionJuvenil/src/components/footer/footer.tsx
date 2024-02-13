@@ -12,12 +12,12 @@ function Footer() {
         <footer>
             <Container className='pt-2 pb-0 mt-2 pb-3'>
                 <Redes/>
-                <Row className='mb-2'>
-                    <a href='https://maps.app.goo.gl/kZcUbcXVDGXVSEg88'>
-                    <p className='text-center'>
-                        <GeoAltFill color='secondary' className='me-3' />
-                        Sector Literatos, 12, 28760 Tres Cantos, Madrid
-                    </p>
+                <Row className='mb-2'><a href="https://maps.app.goo.gl/kZcUbcXVDGXVSEg88" target="_blank">
+                        <p className='text-center'>
+                            <GeoAltFill color='secondary' className='me-3' />
+                            Sector Literatos, 12, 28760 Tres Cantos, Madrid
+                        </p>
+
                     </a>
                 </Row>
                 <Row className='row-gap-2'>
@@ -77,8 +77,8 @@ function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href='/Actividades/Diversificate' className='text-black link-dark link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>
-                                        Diversifícate
+                                    <a href="/Actividades/Diversificate" className='text-black link-dark link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>
+                                        Diversificate
                                     </a>
                                 </li>
                                 <li>
@@ -101,15 +101,12 @@ function Footer() {
                                     </a>
                                 </li>
                                 <li>
+
                                     <a href='/Formacion/Curso_premonis' className='text-black link-dark link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>
                                         Curso de premonis
                                     </a>
                                 </li>
-                                <li>
-                                    <a href='/Formacion/Curso_arte_y_cultura' className='text-black link-dark link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>
-                                        Curso de arte y cultura
-                                    </a>
-                                </li>
+                            
                                 <li>
                                     <a href='/Formacion/Voluntariado' className='text-black link-dark link-offset-2 link-offset-2-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover'>
                                         Voluntariado
