@@ -1,4 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+<<<<<<< Updated upstream
+=======
+import './App.css'
+
+import Index from './pages/index/index';
+import Quienes_somos from './pages/quienes_somos/quienes_somos';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+>>>>>>> Stashed changes
 import NavBarra from './components/navBar/nav';
 import Footer from './components/footer/footer';
 
