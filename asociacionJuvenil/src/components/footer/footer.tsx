@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 function Footer() {
     
     return (
-        <footer>
+        <footer className='mt-auto'>
             <Container className='pt-2 pb-0 mt-2 pb-3'>
                 <Redes/>
                 <Row className='mb-2'><a href="https://maps.app.goo.gl/kZcUbcXVDGXVSEg88" target="_blank">
@@ -126,7 +126,7 @@ function Footer() {
                         &copy; {new Date().getFullYear()} Asociación Juvenil Tres Cantos&ensp;&ensp;
                         <a href='#'>Mapa web</a>&ensp;
                         <a href='#'>Accesibilidad</a>&ensp;
-                        <a href='#'>Administración</a>
+                        <a href='/Administracion'>Administración</a>
                 </Col>
             </Container>
         </footer>
