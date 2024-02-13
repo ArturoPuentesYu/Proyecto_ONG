@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Index from './components/index/index';
-import Quienes_somos from './components/quienes_somos/quienes_somos';
+import Index from './pages/index/index';
+import Quienes_somos from './pages/quienes_somos/quienes_somos';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavBarra from './components/navBar/nav';
 import Footer from './components/footer/footer';
+import Administracion from './pages/administracion/administracion';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     "path": "/quienes_somos",
     "element": <><NavBarra /><Quienes_somos /><Footer /></>
+  },
+  {
+    "path": "/Administracion",
+    "element": <><NavBarra /><Administracion /><Footer /></>
   }, ///
   {
     "path": "/Actividades",

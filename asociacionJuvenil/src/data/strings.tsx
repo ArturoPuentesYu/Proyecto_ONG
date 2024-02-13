@@ -20,9 +20,72 @@ export const REDES_BATUCADA = {
 
 
 export const INICIO = {
-    TITULO: 'Asociaci&oacute;n Juvenil de Tres Cantos',
-    IMAGEN1: '/LogoVectorizado.svg',
-    TEXTO_ONG: 'Las iniciales ONG significan <b>Organización No Gubernamental</b>. Se utiliza paraidentificar a organizaciones o asociaciones que tengan objetivos sociales pero noestén asociadas a ningún gobierno.'
+
+    INICIO: {
+        TITULO: 'Asociaci&oacute;n Juvenil de Tres Cantos',
+        IMAGEN1: '/LogoVectorizado.svg',
+        TEXTO_ONG: 'Las iniciales ONG significan <b>Organización No Gubernamental</b>. Se utiliza paraidentificar a organizaciones o asociaciones que tengan objetivos sociales pero noestén asociadas a ningún gobierno.<br>La Asociación Juvenil por el Ocio Alternativo Tres Cantos (AJ3C) es una entidad sin ánimo de lucro que lleva desde 2007 actuando en #TresCantos y colaborando con el #Ayuntamiento. Nuestro objetivo es ofrecer un ocio alternativo, sano y asequible a los jóvenes del municipio, además de apoyarles en sus proyectos. Somos una familia en crecimiento. Contamos con casi 2.000 socios oficiales y 60 voluntarios activos permanentemente. Los socios no pagan cuotas mensuales ni reciben remuneración por su trabajo. Al principio, la asociación se nutría de subvenciones públicas pero por suerte, desde hace unos años, se autogestiona gracias a los ingresos de los servicios ofrecidos a personas y entidades privadas y públicas.'
+    }, 
+    SECCIONES: [
+        {
+            titulo: "Proyectos",
+            items: [
+                {
+                    titulo: "LGTBIQ+",
+                    descripcion: "Desde la Asociación Juvenil Tres Cantos, nos hemos dedicado durante años a cultivar nuestro conocimiento y habilidades para abordar de manera integral y efectiva todos los aspectos relacionados con la sexualidad en adolescentes."
+                },
+                {
+                    titulo: "El Rincón del Rabano",
+                    descripcion: "El Rincón del Rábano, se define como una iniciativa vanguardista y alternativa de ocio destinada a los jóvenes tricantinos que comparten una pasión vibrante por el anime, el manga y la rica cultura japonesa. En la pasada edición, este evento se convirtió en un fenómeno arrasador, cautivando a miles de personas en nuestro querido municipio."
+                },
+                {
+                    titulo: "Batucada Batucan",
+                    descripcion: "Batucán, una vibrante comunidad que reúne a más de 50 apasionados individuos, ha trascendido el mero concepto de agrupación musical para convertirse en un fenómeno cultural que propone una experiencia de ocio alternativa a través de la percusión brasileña."
+                }
+            ]
+        },
+        {
+            titulo: "Actividades",
+            items: [
+                {
+                    titulo: "Grafitis y murales solidarios",
+                    descripcion: "Hablemos sobre una forma especial de expresión artística que a menudo se malinterpreta: los murales urbanos. Esta es una cultura que rebosa de creatividad y libertad, y se llama grafiti. El grafiti es un tipo de pintura o arte visual que generalmente se encuentra en espacios urbanos, como paredes, portones y muros."
+                },
+                {
+                    titulo: "Diversifícate",
+                    descripcion: "Estás a punto de embarcarte en una experiencia que te hará ver el mundo de una manera totalmente nueva. Imagina escuchar a jóvenes como tú que han enfrentado desafíos sorprendentes. Pero esto no es solo para escuchar; también podrás hacerles todas las preguntas que tengas en mente."
+                },
+                {
+                    titulo: "Neuronízate",
+                    descripcion: "Neuronizate es justo lo que necesitas. No es solo una actividad, es una experiencia educativa única que te permite estar en contacto directo con nosotros, con las tres mejores asociaciones de la ciudad: Amnistía Internacional, Asociación Juvenil Tres Cantos y Cruz Roja Juventud."
+                }
+            ]
+        },
+        {
+            titulo: "Formación",
+            items: [
+                {
+                    titulo: "Curso de monitor de ocio y tiempo libre",
+                    descripcion: "En este curso tendrás la oportunidad de ayudar a las personas a disfrutar de su tiempo libre de manera educativa y divertida y a potenciar el tiempo libre como un espacio de ocio sugestivo y beneficioso para las personas. Aprenderás a organizar y liderar actividades que fomenten el desarrollo personal, social y cultural de los participantes."
+                },
+                {
+                    titulo: "Voluntariado",
+                    descripcion: "Como asociación, ofrecemos una gran variedad de actividades y programas para jóvenes: excursiones, cursos, talleres de arte, charlas, deportes, actividades culturales y eventos sociales. Estas actividades tienen como objetivo proporcionar un entorno seguro y enriquecedor para que los jóvenes puedan participar y aprender de manera divertida y sana."
+                },
+                {
+                    titulo: "Curso de arte y cultura",
+                    descripcion: "En este curso vas a poder desarrollar conocimientos y experiencias para aprender a mejorar los proyectos culturales y de arte en una asociación Juvenil. Se realiza a través de 3 sesiones intensivas con expertos en el ámbito de la cultural. Al finalizar el curso, se te proporcionará un título oficial de la Escuela de Animación."
+                }
+            ]
+        }
+    ],
+    IMAGENES_CAROUSEL: [ 
+        {url: "/sliderIndex/foto1.jpeg", alt: "FOTO1"}, 
+        {url: "/sliderIndex/foto2.jpg", alt: "FOTO2"}, 
+        {url: "/sliderIndex/foto3.jpg", alt: "FOTO3"}, 
+        {url: "/sliderIndex/foto4.jpg", alt: "FOTO4"}, 
+        {url: "/sliderIndex/foto5.jpg", alt: "FOTO5"} 
+    ]
 }
 
 export const QUIENES_SOMOS = {
@@ -37,19 +100,19 @@ export const QUIENES_SOMOS = {
     RECURSOS_TEXTO: "Estos son algunos recursos que utilizamos de las formaciones que hemos recibido como Asociación. Siempre agradecidos a los técnicos y formadoras que nos han dado luz sobre estos temas. <ul><li><b>CRUZ ROJA JUVENTUD</b></li><li><b>OMS</b></li><li><b>INJUVE</b></li></ul>",
     COLABORACIONES_TITULO: "Colaboraciones",
     COLABORACIONES: [
-        { url: "", alt: "Logo Colaborador Cruz Roja Española" }, 
-        { url: "", alt: "Logo Colaborador Circo Diverso" }, 
-        { url: "", alt: "Logo Colaborador Diversos" }, 
-        { url: "", alt: "Logo Colaborador EJC Tres Cantos" }, 
-        { url: "", alt: "Logo Colaborador Festival Circalle Tres Cantos" }, 
-        { url: "", alt: "Logo Colaborador Campeonato Let's Move" }, 
-        { url: "", alt: "Logo Colaborador Comunidad de Madrid" }, 
-        { url: "", alt: "Logo Colaborador Ayuntamiento Tres Cantos" }, 
-        { url: "joven.png", alt: "Logo Colaborador Joven Comunidad de Madrid" }, 
-        { url: "", alt: "Logo Colaborador Concejalia de Juventus del Ayuntamiento de Tres Cantos" }, 
-        { url: "", alt: "Logo Colaborador Comunidad Por el clima" }, 
-        { url: "", alt: "Logo Colaborador Arelita" }, 
-        { url: "", alt: "Logo Colaborador La Bernarda" }, 
+        { url: "", alt: "Logo Colaborador Cruz Roja Española" },
+        { url: "", alt: "Logo Colaborador Circo Diverso" },
+        { url: "", alt: "Logo Colaborador Diversos" },
+        { url: "", alt: "Logo Colaborador EJC Tres Cantos" },
+        { url: "", alt: "Logo Colaborador Festival Circalle Tres Cantos" },
+        { url: "", alt: "Logo Colaborador Campeonato Let's Move" },
+        { url: "", alt: "Logo Colaborador Comunidad de Madrid" },
+        { url: "", alt: "Logo Colaborador Ayuntamiento Tres Cantos" },
+        { url: "joven.png", alt: "Logo Colaborador Joven Comunidad de Madrid" },
+        { url: "", alt: "Logo Colaborador Concejalia de Juventus del Ayuntamiento de Tres Cantos" },
+        { url: "", alt: "Logo Colaborador Comunidad Por el clima" },
+        { url: "", alt: "Logo Colaborador Arelita" },
+        { url: "", alt: "Logo Colaborador La Bernarda" },
         { url: "", alt: "Logo Colaborador EsenciaRadio" }
     ],
 }

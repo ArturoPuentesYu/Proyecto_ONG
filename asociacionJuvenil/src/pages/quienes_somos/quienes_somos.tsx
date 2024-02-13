@@ -1,7 +1,7 @@
 import { Container, Row } from 'react-bootstrap'
-import {QUIENES_SOMOS} from './../../data/strings'
+import {QUIENES_SOMOS} from '../../data/strings'
 import './quienes_somos.css'
-import Carousel from '../carousel/carousel_sin_texto'
+import Carousel from '../../components/carousel/carousel_sin_texto'
 
 const Quienes_somos = () => {
     return (

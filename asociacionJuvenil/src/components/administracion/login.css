@@ -1,0 +1,20 @@
+.login-container {
+    width: 50%;
+    background-color: #FF92C9;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.form-control:focus {
+    box-shadow: unset;
+}
+.boton-login {
+    background-color: transparent; 
+    color: black; 
+    border-color: black;    
+}
+.btn:hover {
+    background-color: #ffc9e4;
+    border-color: transparent;
+    color: black;
+}

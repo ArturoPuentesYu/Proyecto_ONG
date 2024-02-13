@@ -10,7 +10,7 @@ function Footer() {
     
     return (
         <footer>
-            <Container className='pt-2 pb-0'>
+            <Container className='pt-2 pb-0 mt-2 pb-3'>
                 <Redes/>
                 <Row className='mb-2'>
                     <p className='text-center'>
@@ -108,9 +108,12 @@ function Footer() {
                     </Col>
                 </Row>
 
-                <Row className='mt-3 mb-0'>
-                        <p className='text-center p-2'>© {new Date().getFullYear()} Copyright: Asociación Juvenil Tres Cantos</p>
-                </Row>
+                <Col className='mt-3 text-center' xs={10} md={12} lg={12}>
+                        &copy; {new Date().getFullYear()} Asociación Juvenil Tres Cantos&ensp;&ensp;
+                        <a href='#'>Mapa web</a>&ensp;
+                        <a href='#'>Accesibilidad</a>&ensp;
+                        <a href='#'>Administración</a>
+                </Col>
             </Container>
         </footer>
 
