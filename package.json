@@ -1,8 +1,21 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "mongodb": "^6.3.0",
+    "mongoose": "^8.1.2",
+    "require": "^0.4.4",
     "vite": "^5.0.12"
+  },
+  "scripts": {
+    "server": "npm i && node servidor/server.js",
+    "react": "cd ./asociacionJuvenil && npm i && npm run dev"
+  },
+  "devDependencies": {
+    "@types/jwt-decode": "^3.1.0"
   }
 }
