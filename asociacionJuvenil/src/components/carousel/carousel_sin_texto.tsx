@@ -8,7 +8,7 @@ function CarouselC(props: any) {
     <Carousel>
       {arr.map((elemento: any, index: number) => 
         (<Carousel.Item key={index}>
-          <img src={elemento.url} alt={elemento.alt}></img>
+          <img src={elemento.url} alt={elemento.alt} width={props.width}></img>
         </Carousel.Item>)
       )}
     </Carousel>

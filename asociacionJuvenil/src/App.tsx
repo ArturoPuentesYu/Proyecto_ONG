@@ -1,87 +1,48 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
-import Index from './components/index/index.tsx';
-import Quienessomos from './components/quienes_somos/quienes_somos.tsx';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Index from './pages/index/index';
+import Quienes_somos from './pages/quienes_somos/quienes_somos';
+import NavBarra from './components/navBar/nav';
+import Footer from './components/footer/footer';
+import PanelAdmin from './pages/administracion/panel';
 
-const router = createBrowserRouter([
-  {
-    'path': "/",
-    'element':<Index/>
-  },
-  {
-    "path": "/quienes_somos",
-    "element": <Quienes_somos />
-  }, ///
-  {
-    "path": "/Actividades",
-    "element": <Index />
-  }, 
-  {
-    "path": "/Proyectos",
-    "element": <Index />
-  },
-  {
-    "path": "/Formacion",
-    "element": <Index />
-  }, ///
-  {
-    "path": "/Proyectos/Lgtbiq",
-    "element": <Index />
-  },
-  {
-    "path": "/Proyectos/Rincon_del_rabano",
-    "element": <Index />
-  },
-  {
-    "path": "/Proyectos/Batucada_batucan",
-    "element": <Index />
-  }, ///
-  {
-    "path": "/Actividades/Calendario",
-    "element": <Index />
-  },
-  {
-    "path": "/Actividades/Actividades_pasadas",
-    "element": <Index />
-  },
-  {
-    "path": "/Actividades/Neuronizate",
-    "element": <Index />
-  },
-  {
-    "path": "/Actividades/Diversificate",
-    "element": <Index />
-  },
-  {
-    "path": "/Actividades/Grafitis",
-    "element": <Index />
-  }, ///
-  {
-    "path": "/Formacion/Curso_premonis",
-    "element": <Index />
-  },
-  {
-    "path": "/Formacion/Curso_monitor",
-    "element": <Index />
-  },
-  {
-    "path": "/Formacion/Curso_arte_y_cultura",
-    "element": <Index />
-  },
-  {
-    "path": "/Formacion/Voluntariado",
-    "element": <Index />
-  },
-  {
-    "path": "/Formacion/Sexualidad",
-    "element": <Index />
-
-  }
-])
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Administracion from './pages/administracion/administracion';
 
 function App() {
-  return(<RouterProvider router={router}/>);
+  return (
+    <Router>
+      <NavBarra />
+      <Routes>
+        <Route path="/" Component={Index} />
+        <Route path="/quienes_somos" Component={Quienes_somos} />
+        <Route path="/Administracion" Component={Administracion} />
+
+        <Route path="/Proyectos" Component={Index} />
+        <Route path="/Formacion" Component={Index} />
+        <Route path="/Actividades" Component={Index} />
+        
+        <Route path="/Proyectos/Lgtbiq" Component={Index} />
+        <Route path="/Proyectos/Rincon_del_rabano" Component={Index} />
+        <Route path="/Proyectos/Batucada_batucan" Component={Index} />
+
+        <Route path="/Actividades/Calendario" Component={Index} />
+        <Route path="/Actividades/Actividades_pasadas" Component={Index} />
+        <Route path="/Actividades/Neuronizate" Component={Index} />
+        <Route path="/Actividades/Diversificate" Component={Index} />
+        <Route path="/Actividades/Grafitis" Component={Index} />
+
+        <Route path="/Formacion/Curso_premonis" Component={Index} />
+        <Route path="/Formacion/Curso_monitor" Component={Index} />
+        <Route path="/Formacion/Curso_arte_y_cultura" Component={Index} />
+        <Route path="/Formacion/Voluntariado" Component={Index} />
+        <Route path="/Formacion/Sexualidad" Component={Index} />
+        <Route path="/administracion/panel" Component={PanelAdmin} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
 
 export default App
