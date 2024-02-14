@@ -6,6 +6,7 @@ import './index.css'
 import { useState, useEffect } from 'react';
 import IndexCards from "../../components/index_cards";
 import CarouselC from '../../components/carousel/carousel_sin_texto';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 function Index() {
@@ -13,12 +14,13 @@ function Index() {
     const [logoSize, cambioIconSize] = useState(34);
     const [textos, cambioInicio] = useState<any>("");
 
-    
+
     useEffect(() => {
         fetch("http://localhost:3000/")
             .then(json => json.json())
             .then(data => cambioInicio(data[0]))
             .catch(error => console.log(error));
+
         // Funcion para añadir al evento resize de la pantalla
         const sizePantallas = () => {
 
@@ -41,11 +43,18 @@ function Index() {
     }, []);
 
     if (!textos) {
-        return <p>Cargando...</p>; 
+        return(<>
+            <Container className='d-flex mt-auto justify-content-center'>
+            <Spinner animation="border" role="status">
+            <span className="visually-hidden">Cargando...</span>
+        </Spinner>
+            </Container>
+        </>);
     }
 
     return (
         <>
+            
             <main>
                 <Container fluid='sm' className='mb-2'>
                     <Row className='direccion_flex align-items-center justify-content-center' xs={1} md={1} xl={2}>

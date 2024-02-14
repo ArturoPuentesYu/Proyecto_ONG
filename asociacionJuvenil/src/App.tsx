@@ -5,6 +5,7 @@ import Index from './pages/index/index';
 import Quienes_somos from './pages/quienes_somos/quienes_somos';
 import NavBarra from './components/navBar/nav';
 import Footer from './components/footer/footer';
+import PanelAdmin from './pages/administracion/panel';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Administracion from './pages/administracion/administracion';
@@ -37,6 +38,7 @@ function App() {
         <Route path="/Formacion/Curso_arte_y_cultura" Component={Index} />
         <Route path="/Formacion/Voluntariado" Component={Index} />
         <Route path="/Formacion/Sexualidad" Component={Index} />
+        <Route path="/administracion/panel" Component={PanelAdmin} />
       </Routes>
       <Footer />
     </Router>
