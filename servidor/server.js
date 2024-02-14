@@ -14,13 +14,26 @@ app.get("/", async (req, res) => {
         await cliente.connect();
         console.log("Conectado a la base de datos");
         t = await cliente.db(bbdd).collection("inicio").find({}).toArray();
+    } catch (error) {
+        console.log(error);
+    }
+    res.send(t);
+    cliente.close();
+});
+
+app.get("/quienes_somos", async (req, res) => {
+    const cliente = new MongoClient(url);
+    let t = "";
+    try {
+        await cliente.connect();
+        console.log("Conectado a la base de datos");
+        t = await cliente.db(bbdd).collection("quienes_somos").find({}).toArray();
         console.log(t);
     } catch (error) {
         console.log(error);
-    } finally{
-        res.send(t);
-    }
+    }  
+    res.send(t);
     cliente.close();
-})
+});
 
 app.listen(3000, () => {console.log("Escuchando el puerto 3000")});

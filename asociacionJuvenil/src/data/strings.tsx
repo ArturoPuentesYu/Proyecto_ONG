@@ -117,6 +117,7 @@ export const QUIENES_SOMOS = {
     ],
 }
 
+
 export const BATUCADA = {}
 
 export const RINCON = {}

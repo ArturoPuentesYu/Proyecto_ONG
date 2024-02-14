@@ -19,7 +19,6 @@ function Index() {
             .then(json => json.json())
             .then(data => cambioInicio(data[0]))
             .catch(error => console.log(error));
-        
         // Funcion para añadir al evento resize de la pantalla
         const sizePantallas = () => {
 
