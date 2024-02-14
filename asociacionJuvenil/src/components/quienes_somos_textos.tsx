@@ -21,14 +21,13 @@ function CardsQuiensSomos(props: any) {
                     return (
                         <Container key={index} className='my-5'>
                             {section.map((texto: any, index: number) => (<>
-                                <Row key={index}>
                                     <Card className='h-100'>
                                         <Card.Body>
                                             <Card.Title><h2>{texto.TITULO}</h2></Card.Title>
                                             <Card.Text><p dangerouslySetInnerHTML={{ __html: texto.TEXTO }}></p></Card.Text>
                                         </Card.Body>
                                     </Card>
-                                </Row></>
+                                     </>
                             ))}
                         </Container>
                     );
