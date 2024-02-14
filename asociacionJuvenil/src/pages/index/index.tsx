@@ -4,22 +4,21 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import './index.css'
 import { useState, useEffect } from 'react';
-import { INICIO } from '../../data/strings';
 import IndexCards from "../../components/index_cards";
 import CarouselC from '../../components/carousel/carousel_sin_texto';
 
 
-async function Index() {
+function Index() {
     // Para que en movil los iconos cambien un poco de tamaño.
     const [logoSize, cambioIconSize] = useState(34);
-    //const [textos, cambioInicio] = useState("");
+    const [textos, cambioInicio] = useState<any>("");
 
     
     useEffect(() => {
-        /*fetch("http://127.0.0.1:3000/")
+        fetch("http://localhost:3000/")
             .then(json => json.json())
             .then(data => cambioInicio(data[0]))
-            .catch(error => console.log(error));*/
+            .catch(error => console.log(error));
         
         // Funcion para añadir al evento resize de la pantalla
         const sizePantallas = () => {
@@ -42,9 +41,9 @@ async function Index() {
         return () => window.removeEventListener('resize', sizePantallas);
     }, []);
 
-    /*if (!textos) {
-        return <p>Cargando...</p>; // Renderiza un mensaje de carga si textos aún es un Promise
-    }*/
+    if (!textos) {
+        return <p>Cargando...</p>; 
+    }
 
     return (
         <>
@@ -52,18 +51,18 @@ async function Index() {
                 <Container fluid='sm' className='mb-2'>
                     <Row className='direccion_flex align-items-center justify-content-center' xs={1} md={1} xl={2}>
                         <Col className='text-center'>
-                            <img src={INICIO.INICIO.IMAGEN1} alt="imagen del logo" width={logoSize} />
+                            <img src={textos.INICIO.IMAGEN1} alt="imagen del logo" width={logoSize} />
                         </Col>
                         <Col>
                             <Container>
                                 <Row>
                                     <Col>
-                                        <h1 dangerouslySetInnerHTML={{ __html: INICIO.INICIO.TITULO }}></h1>
+                                        <h1 dangerouslySetInnerHTML={{ __html: textos.INICIO.TITULO }}></h1>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col>
-                                        <p dangerouslySetInnerHTML={{ __html: INICIO.INICIO.TEXTO_ONG }} />
+                                        <p dangerouslySetInnerHTML={{ __html: textos.INICIO.TEXTO_ONG }} />
                                     </Col>
                                 </Row>
                                 <Row>
@@ -76,9 +75,9 @@ async function Index() {
                     </Row>
                 </Container>
 
-                <CarouselC imagenes={INICIO.IMAGENES_CAROUSEL} width='w-100' />
+                <CarouselC imagenes={textos.IMAGENES_CAROUSEL} width='w-100' />
 
-                <IndexCards cards={INICIO.SECCIONES} />
+                <IndexCards cards={textos.SECCIONES} />
             </main>
         </>
     );
