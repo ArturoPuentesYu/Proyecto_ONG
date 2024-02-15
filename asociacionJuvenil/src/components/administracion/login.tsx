@@ -41,7 +41,6 @@ export default () => {
         } catch (error) {
             console.error(error);
         }
-
     };
 
     return (
@@ -62,7 +61,7 @@ export default () => {
                 </InputGroup>
 
                 <Container className="mt-4 d-flex justify-content-center align-items-center">
-                    <Button className="boton-login" variant="outline-primary" id="button-addon2">Iniciar sesion</Button>
+                    <Button type="submit" className="boton-login" variant="outline-primary" id="button-addon2">Iniciar sesion</Button>
                 </Container>
             </Form>
 
