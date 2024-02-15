@@ -1,0 +1,21 @@
+.container {
+    justify-content: center;
+}
+svg {
+    margin-right: 5%;
+    vertical-align: text-top;
+}
+.nav-item {
+    height: 40px;
+}
+.nav-link {
+    color: black;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: black;
+    background-color: rgb(185, 185, 185);
+}
+.nav-item > a {
+    text-align: start;
+    margin-bottom: 0;
+}
