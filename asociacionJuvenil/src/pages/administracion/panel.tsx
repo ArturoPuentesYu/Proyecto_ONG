@@ -89,6 +89,12 @@ const PanelAdmin = () => {
     </>);
 
     /*
+import { Container } from "react-bootstrap"
+import * as jwtDecode from 'jwt-decode';
+
+
+const PanelAdmin = () => {
+    
     const verificarExpiracionToken = (token: string): boolean => {
         // Forzamos el tipo aquí para asegurarnos de que TypeScript lo trate como una función
         const decoded: DecodedToken = (jwtDecode as unknown as (token: string) => DecodedToken)(token);
@@ -126,9 +132,14 @@ const PanelAdmin = () => {
         }
     } else {
         console.log('No hay token disponible');
+
         window.location.href = "/Administracion";
     }*/
 
+
+        // Redirigir al usuario al login o manejar de otra manera
+    }
+    
 }
 
 export default PanelAdmin
