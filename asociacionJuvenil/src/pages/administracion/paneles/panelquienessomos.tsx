@@ -18,8 +18,8 @@ const PanelQuienesSomos = () => {
                     </Col>
                     <Col sm={9}>
                         <Tab.Content>
-                            <Tab.Pane eventKey="textos"><h1>Administraci&oacute;n de textos</h1></Tab.Pane>
-                            <Tab.Pane eventKey="imagenes"><h1>Administraci&oacute;n de im&aacute;genes</h1></Tab.Pane>
+                            <Tab.Pane eventKey="textos">Contenido no disponible todav&iacute;a.</Tab.Pane>
+                            <Tab.Pane eventKey="imagenes">Contenido no disponible todav&iacute;a.</Tab.Pane>
                         </Tab.Content>
                     </Col>
                 </Row>

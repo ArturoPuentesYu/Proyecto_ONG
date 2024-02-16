@@ -2,13 +2,14 @@ import { InputGroup, Form, Container, Button } from "react-bootstrap"
 import './login.css'
 import { FormEvent, useState } from "react";
 import { Eye } from 'react-bootstrap-icons'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-export default () => {
+const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -16,9 +17,7 @@ export default () => {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         try {
-            const navigate = useNavigate();
             const response = await fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: {
@@ -29,8 +28,8 @@ export default () => {
                     password,
                 }),
             });
-
             if (response.ok) {
+                console.log(response);
                 const data = await response.json();
                 console.log('Login exitoso:', data);
                 localStorage.setItem('token', data.token); // Almacena el token
@@ -69,3 +68,5 @@ export default () => {
         </Container>
     )
 }
+
+export default Login

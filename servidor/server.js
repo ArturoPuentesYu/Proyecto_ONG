@@ -14,6 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", async (req, res) => {
+    console.log("GET");
     const cliente = new MongoClient(url);
     let t = "";
     try {
@@ -24,8 +25,39 @@ app.get("/", async (req, res) => {
         console.log(error);
     }
     res.send(t);
-    console.log("contenido enviado: ", t);
+    console.log(t);
+    console.log("contenido enviado");
     cliente.close();
+});
+
+app.put("/", async (req, res) => {
+    /*
+    
+    {
+  ruta: 'JSON.INICIO.TEXTO_ONG',
+  texto: 'Las iniciales ONG significan <b>Organización No Gubernamental</b>. Se utiliza paraidentificar a organizaciones o asociaciones que tengan objetivos sociales pero noestén asociadas a ningún gobierno.<br>La Asociación Juvenil por el Ocio Alternativo Tres Cantos (AJ3C) es una entidad sin ánimo de lucro que lleva desde 2007 actuando en #TresCantos y colaborando con el #Ayuntamiento. Nuestro objetivo es ofrecer un ocio alternativo, sano y asequible a los jóvenes del municipio, además de apoyarles en sus proyectos. Somos una familia en crecimiento. Contamos con casi 2.000 socios oficiales y 60 voluntarios activos permanentemente. Los socios no pagan cuotas mensuales ni reciben remuneración por su trabajo. Al principio, la asociación se nutría de subvenciones públicas pero por suerte, desde hace unos años, se autogestiona gracias a los ingresos de los servicios ofrecidos a personas y entidades privadas y públicas.',
+  seccion: null,
+  item: null
+}
+    
+    */
+    const descripcion = req.body.texto;
+    const cliente = new MongoClient(url);
+    let t = "";
+    try {
+        await cliente.connect();
+        console.log("Conectado a la base de datos");
+        if (req.body.seccion != null && req.body.item != null) {
+            let string = "SECCIONES." + req.body.seccion + ".items." + req.body.item + ".descripcion";
+            console.log(string);
+            t = await cliente.db(bbdd).collection("inicio").updateOne({ }, {$set: {[string]: descripcion}});
+        } else {
+            t = await cliente.db(bbdd).collection("inicio").updateOne({ }, {$set: {"INICIO.TEXTO_ONG": descripcion}});
+        }
+        console.log(t);
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 app.get("/quienes_somos", async (req, res) => {
@@ -43,13 +75,9 @@ app.get("/quienes_somos", async (req, res) => {
     cliente.close();
 });
 
-// Define un esquema y modelo para los usuarios
-const userSchema = new mongoose.Schema({
-    email: String,
-    password: String,
-});
-const User = mongoose.model('User', userSchema);
-
+/*app.get('/admin', verificarToken, (req, res) => {
+    res.send("Bienvenido al panel de administración");
+});*/
 
 app.post('/login', async (req, res) => {
     // Intenta encontrar un usuario en la base de datos que coincida con el correo electrónico proporcionado
@@ -72,6 +100,15 @@ app.post('/login', async (req, res) => {
     }
 });
 
+
+
+// Define un esquema y modelo para los usuarios
+const userSchema = new mongoose.Schema({
+    email: String,
+    password: String,
+});
+const User = mongoose.model('User', userSchema);
+
 const verificarToken = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1]; // Bearer Token
 
@@ -87,13 +124,6 @@ const verificarToken = (req, res, next) => {
         return res.status(401).send({ message: "Token inválido" });
     }
 };
-
-app.get('/admin', verificarToken, (req, res) => {
-    res.send("Bienvenido al panel de administración");
-});
-
-
-
 
 // Datos del usuario a registrar
 const email = 'usuario@example.com';
@@ -127,8 +157,5 @@ const registerUser = async (email, password) => {
     await client.close();
   }
 };
-
-// Llamar a la función de registro
-// registerUser(email, password);
 
 app.listen(3000, () => { console.log("Escuchando el puerto 3000") });
