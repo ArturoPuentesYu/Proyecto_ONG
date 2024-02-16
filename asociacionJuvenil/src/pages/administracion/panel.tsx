@@ -134,11 +134,11 @@ const PanelAdmin = () => {
         console.log('No hay token disponible');
 
         window.location.href = "/Administracion";
-    }*/
+    }
 
 
         // Redirigir al usuario al login o manejar de otra manera
-    }
+    }*/
     
 }
 

@@ -24,6 +24,7 @@ app.get("/", async (req, res) => {
         console.log(error);
     }
     res.send(t);
+    console.log("contenido enviado: ", t);
     cliente.close();
 });
 
