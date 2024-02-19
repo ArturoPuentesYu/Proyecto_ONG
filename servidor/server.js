@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const url = "mongodb+srv://lectura:lectura1234@clusterprueba.esmqyee.mongodb.net/?retryWrites=true&w=majority";
 const bbdd = "ong";
 const bodyParser = require("body-parser");
+const jwt = require('jsonwebtoken');
 
 const app = express();
 app.use(cors());
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", async (req, res) => {
+    console.log("GET");
     const cliente = new MongoClient(url);
     let t = "";
     try {
@@ -24,8 +26,30 @@ app.get("/", async (req, res) => {
         console.log(error);
     }
     res.send(t);
-    console.log("contenido enviado: ", t);
+    console.log(t);
+    console.log("contenido enviado");
     cliente.close();
+});
+
+app.put("/", async (req, res) => {
+
+    const descripcion = req.body.texto;
+    const cliente = new MongoClient(url);
+    let t = "";
+    try {
+        await cliente.connect();
+        console.log("Conectado a la base de datos");
+        if (req.body.seccion != null && req.body.item != null) {
+            let string = "SECCIONES." + req.body.seccion + ".items." + req.body.item + ".descripcion";
+            console.log(string);
+            t = await cliente.db(bbdd).collection("inicio").updateOne({ }, {$set: {[string]: descripcion}});
+        } else {
+            t = await cliente.db(bbdd).collection("inicio").updateOne({ }, {$set: {"INICIO.TEXTO_ONG": descripcion}});
+        }
+        console.log(t);
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 app.get("/quienes_somos", async (req, res) => {
@@ -43,34 +67,43 @@ app.get("/quienes_somos", async (req, res) => {
     cliente.close();
 });
 
+/*app.get('/admin', verificarToken, (req, res) => {
+    res.send("Bienvenido al panel de administración");
+});
 // Define un esquema y modelo para los usuarios
 const userSchema = new mongoose.Schema({
     email: String,
     password: String,
 });
-const User = mongoose.model('User', userSchema);
-
+const User = mongoose.model('User', userSchema);*/
 
 app.post('/login', async (req, res) => {
     // Intenta encontrar un usuario en la base de datos que coincida con el correo electrónico proporcionado
-    const user = await User.findOne({ email: req.body.email });
+    let user = null;
+    try {
+        const client = new MongoClient(url);
+        await client.connect();
+        const db = client.db(bbdd);
+        const collection = db.collection("user");
+        user = await collection.findOne({ email: req.body.email });
+    } catch (error) {
+    }
     // Si se encuentra un usuario con el correo electrónico proporcionado...
-    if (user) {
-        // Compara la contraseña proporcionada con la contraseña hasheada almacenada usando bcrypt
-        const validPassword = await bcrypt.compare(req.body.password, user.password);
+    if (user !== null) {
+        const validPassword = bcrypt.compareSync(req.body.password, user.password);
         if (validPassword) {
-            // Genera un token JWT que contiene el ID del usuario y tiene una duración de 1 hora
             const token = jwt.sign({ id: user._id }, 'tuSecretSuperSecreto', { expiresIn: '1h' });
-            // Envía una respuesta con el token JWT y un mensaje de éxito
             res.status(200).json({ message: "Login exitoso", token, ok: true });
         } else {
             res.status(400).json({ error: "Contraseña incorrecta", ok: false });
         }
     } else {
-        // Si no se encuentra un usuario con el correo electrónico proporcionado, envía un mensaje de error
         res.status(404).json({ error: "Usuario no encontrado", ok: false });
     }
 });
+
+
+
 
 const verificarToken = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1]; // Bearer Token
@@ -87,13 +120,6 @@ const verificarToken = (req, res, next) => {
         return res.status(401).send({ message: "Token inválido" });
     }
 };
-
-app.get('/admin', verificarToken, (req, res) => {
-    res.send("Bienvenido al panel de administración");
-});
-
-
-
 
 // Datos del usuario a registrar
 const email = 'usuario@example.com';
@@ -127,8 +153,5 @@ const registerUser = async (email, password) => {
     await client.close();
   }
 };
-
-// Llamar a la función de registro
-// registerUser(email, password);
 
 app.listen(3000, () => { console.log("Escuchando el puerto 3000") });

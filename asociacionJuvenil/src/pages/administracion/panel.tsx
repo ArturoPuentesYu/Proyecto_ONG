@@ -6,8 +6,12 @@ import './panel.css'
 import PanelInicio from "./paneles/panelinicio";
 import PanelQuienesSomos from "./paneles/panelquienessomos";
 
-
 const PanelAdmin = () => {
+    //Comprobamos que tenemos acceso a la información del token
+    const token = localStorage.getItem('token');
+    if (token===null) {
+        window.location.href = "/administracion";
+    } else {
     return (<>
         <Container className="pt-3">
             <Tab.Container id="left-tabs-example" defaultActiveKey="inicio">
@@ -70,16 +74,25 @@ const PanelAdmin = () => {
                                     Usuarios
                                     </Nav.Link>
                             </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="redes">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M20 9C19.2048 5.01455 15.5128 2 11.0793 2C6.06549 2 2 5.85521 2 10.61C2 12.8946 2.93819 14.9704 4.46855 16.5108C4.80549 16.85 5.03045 17.3134 4.93966 17.7903C4.78982 18.5701 4.45026 19.2975 3.95305 19.9037C5.26123 20.1449 6.62147 19.9277 7.78801 19.3127C8.20039 19.0954 8.40657 18.9867 8.55207 18.9646C8.65392 18.9492 8.78659 18.9636 9 19.0002" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 16.2617C11 19.1674 13.4628 21.5234 16.5 21.5234C16.8571 21.5238 17.2132 21.4908 17.564 21.425C17.8165 21.3775 17.9428 21.3538 18.0309 21.3673C18.119 21.3807 18.244 21.4472 18.4938 21.58C19.2004 21.9558 20.0244 22.0885 20.8169 21.9411C20.5157 21.5707 20.31 21.1262 20.2192 20.6496C20.1642 20.3582 20.3005 20.075 20.5046 19.8677C21.4317 18.9263 22 17.6578 22 16.2617C22 13.356 19.5372 11 16.5 11C13.4628 11 11 13.356 11 16.2617Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
+                                    Redes Sociales
+                                    </Nav.Link>
+                            </Nav.Item>
                         </Nav>
                     </Col>
                     <Col sm={9}>
                         <Tab.Content>
                             <Tab.Pane eventKey="inicio"><PanelInicio /></Tab.Pane>
                             <Tab.Pane eventKey="quienes_somos"><PanelQuienesSomos /></Tab.Pane>
-                            <Tab.Pane eventKey="proyectos"><h1>Contenido disponible m&aacute;s adelante</h1></Tab.Pane>
-                            <Tab.Pane eventKey="actividades"><h1>Contenido disponible m&aacute;s adelante</h1></Tab.Pane>
-                            <Tab.Pane eventKey="formacion"><h1>Contenido disponible m&aacute;s adelante</h1></Tab.Pane>
-                            <Tab.Pane eventKey="usuarios"><h1>Contenido disponible m&aacute;s adelante</h1></Tab.Pane>
+                            <Tab.Pane eventKey="proyectos">Contenido disponible m&aacute;s adelante</Tab.Pane>
+                            <Tab.Pane eventKey="actividades">Contenido disponible m&aacute;s adelante</Tab.Pane>
+                            <Tab.Pane eventKey="formacion">Contenido disponible m&aacute;s adelante</Tab.Pane>
+                            <Tab.Pane eventKey="usuarios">Contenido disponible m&aacute;s adelante</Tab.Pane>
                         </Tab.Content>
                     </Col>
                 </Row>
@@ -87,58 +100,7 @@ const PanelAdmin = () => {
         </Container>
 
     </>);
-
-    /*
-import { Container } from "react-bootstrap"
-import * as jwtDecode from 'jwt-decode';
-
-
-const PanelAdmin = () => {
-    
-    const verificarExpiracionToken = (token: string): boolean => {
-        // Forzamos el tipo aquí para asegurarnos de que TypeScript lo trate como una función
-        const decoded: DecodedToken = (jwtDecode as unknown as (token: string) => DecodedToken)(token);
-        const currentDate = new Date();
-
-        if (decoded.exp * 1000 < currentDate.getTime()) {
-            console.log('El token ha expirado');
-            return false;
-        } else {
-            console.log('El token es válido');
-            return true;
-        }
-    };
-
-    interface DecodedToken {
-        exp: number;
-        // Agrega aquí más propiedades del token según necesites
-    }
-
-    const token = localStorage.getItem('token');
-    if (token) {
-        if (verificarExpiracionToken(token)) {
-            return (<>
-                <Container className="mt-auto">
-                    <h1>Hola administrador</h1>
-                </Container>
-        
-            </>);
-        } else {
-            return (<>
-                <Container className="mt-auto">
-                    <h1>No tienes permisos!</h1>
-                </Container>
-            </>);
-        }
-    } else {
-        console.log('No hay token disponible');
-
-        window.location.href = "/Administracion";
-    }
-
-
-        // Redirigir al usuario al login o manejar de otra manera
-    }*/
+}
     
 }
 

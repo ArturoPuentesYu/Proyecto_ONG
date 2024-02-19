@@ -16,9 +16,11 @@ function App() {
       <NavBarra />
       <Routes>
         <Route path="/" Component={Index} />
-        <Route path="/quienes_somos" Component={Quienes_somos} />
         <Route path="/Administracion" Component={Administracion} />
+        <Route path="/Administracion/panel" Component={PanelAdmin} />
 
+        <Route path="/quienes_somos" Component={Quienes_somos} />
+        
         <Route path="/Proyectos" Component={Index} />
         <Route path="/Formacion" Component={Index} />
         <Route path="/Actividades" Component={Index} />
@@ -38,7 +40,6 @@ function App() {
         <Route path="/Formacion/Curso_arte_y_cultura" Component={Index} />
         <Route path="/Formacion/Voluntariado" Component={Index} />
         <Route path="/Formacion/Sexualidad" Component={Index} />
-        <Route path="/administracion/panel" Component={PanelAdmin} />
       </Routes>
       <Footer />
     </Router>
