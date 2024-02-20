@@ -9,6 +9,7 @@ import PanelAdmin from './pages/administracion/panel';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Administracion from './pages/administracion/administracion';
+import calendario from './pages/actividades/calendario';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         <Route path="/Proyectos/Rincon_del_rabano" Component={Index} />
         <Route path="/Proyectos/Batucada_batucan" Component={Index} />
 
-        <Route path="/Actividades/Calendario" Component={Index} />
+        <Route path="/Actividades/Calendario" Component={calendario} />
         <Route path="/Actividades/Actividades_pasadas" Component={Index} />
         <Route path="/Actividades/Neuronizate" Component={Index} />
         <Route path="/Actividades/Diversificate" Component={Index} />

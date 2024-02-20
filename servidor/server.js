@@ -31,6 +31,26 @@ app.get("/", async (req, res) => {
     cliente.close();
 });
 
+app.get("/calendario", async (req, res) => {
+    console.log("GET");
+    const cliente = new MongoClient(url);
+    let t = "";
+    try {
+        await cliente.connect();
+        console.log("Conectado a la base de datos");
+        t = await cliente.db(bbdd).collection("proximas_actividades").find({}).toArray();
+    } catch (error) {
+        console.log(error);
+    }
+    t.forEach(element => {
+        element.start = element.start.toISOString().replace(/T.*$/, '');
+    });
+    res.send(t);
+    console.log(t);
+    console.log("contenido enviado");
+    cliente.close();
+})
+
 app.put("/", async (req, res) => {
 
     const descripcion = req.body.texto;
@@ -67,16 +87,6 @@ app.get("/quienes_somos", async (req, res) => {
     cliente.close();
 });
 
-/*app.get('/admin', verificarToken, (req, res) => {
-    res.send("Bienvenido al panel de administración");
-});
-// Define un esquema y modelo para los usuarios
-const userSchema = new mongoose.Schema({
-    email: String,
-    password: String,
-});
-const User = mongoose.model('User', userSchema);*/
-
 app.post('/login', async (req, res) => {
     // Intenta encontrar un usuario en la base de datos que coincida con el correo electrónico proporcionado
     let user = null;
@@ -101,6 +111,8 @@ app.post('/login', async (req, res) => {
         res.status(404).json({ error: "Usuario no encontrado", ok: false });
     }
 });
+
+
 
 
 
