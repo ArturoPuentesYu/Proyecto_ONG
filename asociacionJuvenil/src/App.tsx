@@ -5,10 +5,10 @@ import Index from './pages/index/index';
 import Quienes_somos from './pages/quienes_somos/quienes_somos';
 import NavBarra from './components/navBar/nav';
 import Footer from './components/footer/footer';
-import PanelAdmin from './pages/administracion/panel';
+import PanelAdmin from './pages/administracion/panelAdministracion';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Administracion from './pages/administracion/administracion';
+import panelAdminsitracion from './pages/administracion/panelAdministracion';
 import calendario from './pages/actividades/calendario';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <NavBarra />
       <Routes>
         <Route path="/" Component={Index} />
-        <Route path="/Administracion" Component={Administracion} />
+        <Route path="/Administracion" Component={panelAdminsitracion} />
         <Route path="/Administracion/panel" Component={PanelAdmin} />
 
         <Route path="/quienes_somos" Component={Quienes_somos} />
