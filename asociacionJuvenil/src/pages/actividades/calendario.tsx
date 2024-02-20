@@ -2,7 +2,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'
 import { useState, useEffect } from "react";
 import { Spinner, Container } from "react-bootstrap";
-import CategoryFilter from '../../components/filtro_categoria';
+// import CategoryFilter from '../../components/filtro_categoria';
 
 type Categoria = 'Artístico' | 'Cultural' | 'Ocio y Tiempo Libre' | 'Educativo' | 'Diversidad';
 
@@ -64,7 +64,7 @@ const calendario = () => {
     }
 
     return (<main>
-        <Container fluid='md' className='p-2'>
+        <Container fluid='md' className='p-2 mt-2 mb-5'>
             <FullCalendar
                 plugins={[dayGridPlugin]}
                 initialView="dayGridMonth"
