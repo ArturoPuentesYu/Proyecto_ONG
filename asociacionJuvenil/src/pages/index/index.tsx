@@ -44,18 +44,18 @@ function Index() {
     }, []);
 
     if (!textos) {
-        return(<>
+        return (<>
             <Container className='d-flex mt-auto justify-content-center'>
-            <Spinner animation="border" role="status">
-            <span className="visually-hidden">Cargando...</span>
-        </Spinner>
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Cargando...</span>
+                </Spinner>
             </Container>
         </>);
     }
 
     return (
         <>
-            
+
             <main>
                 <Container fluid='sm' className='mb-2'>
                     <Row className='direccion_flex align-items-center justify-content-center' xs={1} md={1} xl={2}>

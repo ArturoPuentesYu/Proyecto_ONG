@@ -15,7 +15,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", async (req, res) => {
-    console.log("GET");
     const cliente = new MongoClient(url);
     let t = "";
     try {
@@ -26,13 +25,11 @@ app.get("/", async (req, res) => {
         console.log(error);
     }
     res.send(t);
-    console.log(t);
     console.log("contenido enviado");
     cliente.close();
 });
 
 app.get("/calendario", async (req, res) => {
-    console.log("GET");
     const cliente = new MongoClient(url);
     let t = "";
     try {
@@ -46,10 +43,25 @@ app.get("/calendario", async (req, res) => {
         element.start = element.start.toISOString().replace(/T.*$/, '');
     });
     res.send(t);
-    console.log(t);
     console.log("contenido enviado");
     cliente.close();
 })
+
+app.get("/quienes_somos", async (req, res) => {
+    const cliente = new MongoClient(url);
+    let t = "";
+    try {
+        await cliente.connect();
+        console.log("Conectado a la base de datos");
+        t = await cliente.db(bbdd).collection("quienes_somos").find({}).toArray();
+        console.log(t);
+    } catch (error) {
+        console.log(error);
+    }
+    res.send(t);
+    console.log("contenido enviado");
+    cliente.close();
+});
 
 app.put("/", async (req, res) => {
 
@@ -70,21 +82,6 @@ app.put("/", async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-});
-
-app.get("/quienes_somos", async (req, res) => {
-    const cliente = new MongoClient(url);
-    let t = "";
-    try {
-        await cliente.connect();
-        console.log("Conectado a la base de datos");
-        t = await cliente.db(bbdd).collection("quienes_somos").find({}).toArray();
-        console.log(t);
-    } catch (error) {
-        console.log(error);
-    }
-    res.send(t);
-    cliente.close();
 });
 
 app.post('/login', async (req, res) => {

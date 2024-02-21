@@ -48,7 +48,7 @@ function NavBarra() {
             <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="/quienes_somos">Quienes Somos</Nav.Link>
             <NavDropdown title="Proyectos" id="proyectos">
-              <NavDropdown.Item href="/Proyectos/Lgtbiq">LGBTQ+</NavDropdown.Item>
+              <NavDropdown.Item href="/Proyectos/Lgtbiq">LGTBIQ+</NavDropdown.Item>
               <NavDropdown.Item href="/Proyectos/Rincon_del_rabano">El rincón del rabano</NavDropdown.Item>
               <NavDropdown.Item href="/Proyectos/Batucada_batucan">Batucada Batucán</NavDropdown.Item>
             </NavDropdown>
