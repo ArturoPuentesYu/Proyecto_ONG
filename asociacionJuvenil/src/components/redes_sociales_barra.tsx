@@ -34,29 +34,29 @@ const Redes = () => {
     return (<>
         <Row className='my-3 justify-content-center d-grip gap-2'>
             <Col className='text-center' xs='2' md={1}>
-                <a href={REDES.TWITTER}>
+                <a href={REDES.TWITTER} target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width={iconSize} height={iconSize} fill="currentColor" className="bi bi-twitter-x" viewBox="0 0 16 16">
                         <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
                     </svg>
                 </a>
             </Col>
             <Col className='text-center' xs='2' md={1}>
-                <a href={REDES.INSTAGRAM}><Instagram size={iconSize}></Instagram></a>
+                <a href={REDES.INSTAGRAM} target="_blank"><Instagram size={iconSize}></Instagram></a>
             </Col>
             <Col className='text-center' xs='2' md={1}>
-                <a href={REDES.TIKTOK}><Tiktok size={iconSize}></Tiktok></a>
+                <a href={REDES.TIKTOK} target="_blank"><Tiktok size={iconSize}></Tiktok></a>
             </Col>
             <Col className='text-center' xs='2' md={1}>
-                <a href={REDES.FACEBOOK}><Facebook size={iconSize}></Facebook></a>
+                <a href={REDES.FACEBOOK} target="_blank"><Facebook size={iconSize}></Facebook></a>
             </Col>
             <Col className='text-center' xs='2' md={1}>
-                <a href={REDES.YOUTUBE}><Youtube size={iconSize}></Youtube></a>
+                <a href={REDES.YOUTUBE} target="_blank"><Youtube size={iconSize}></Youtube></a>
             </Col>
             <Col className='text-center' xs='2' md={1}>
-                <a href={REDES.EMAIL}><Envelope size={iconSize}></Envelope></a>
+                <a href={'mailto:'+REDES.EMAIL} target="_blank"><Envelope size={iconSize}></Envelope></a>
             </Col>
             <Col className='text-center' xs='2' md={1}>
-                <a href={REDES.WHATSAPP}><Whatsapp size={iconSize}></Whatsapp></a>
+                <a href={REDES.WHATSAPP} target="_blank"><Whatsapp size={iconSize}></Whatsapp></a>
             </Col>
         </Row>
     </>);

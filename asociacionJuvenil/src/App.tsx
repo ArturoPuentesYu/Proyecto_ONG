@@ -6,10 +6,10 @@ import Quienes_somos from './pages/quienes_somos/quienes_somos';
 import NavBarra from './components/navBar/nav';
 import Footer from './components/footer/footer';
 import PanelAdmin from './pages/administracion/panelAdministracion';
+import PanelAdminsitracion from './pages/administracion/panelAdministracion';
+import Calendario from './pages/actividades/calendario';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import panelAdminsitracion from './pages/administracion/panelAdministracion';
-import calendario from './pages/actividades/calendario';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <NavBarra />
       <Routes>
         <Route path="/" Component={Index} />
-        <Route path="/Administracion" Component={panelAdminsitracion} />
+        <Route path="/Administracion" Component={PanelAdminsitracion} />
         <Route path="/Administracion/panel" Component={PanelAdmin} />
 
         <Route path="/quienes_somos" Component={Quienes_somos} />
@@ -30,7 +30,7 @@ function App() {
         <Route path="/Proyectos/Rincon_del_rabano" Component={Index} />
         <Route path="/Proyectos/Batucada_batucan" Component={Index} />
 
-        <Route path="/Actividades/Calendario" Component={calendario} />
+        <Route path="/Actividades/Calendario" Component={Calendario} />
         <Route path="/Actividades/Actividades_pasadas" Component={Index} />
         <Route path="/Actividades/Neuronizate" Component={Index} />
         <Route path="/Actividades/Diversificate" Component={Index} />
@@ -41,6 +41,7 @@ function App() {
         <Route path="/Formacion/Curso_arte_y_cultura" Component={Index} />
         <Route path="/Formacion/Voluntariado" Component={Index} />
         <Route path="/Formacion/Sexualidad" Component={Index} />
+        <Route path='*' Component={Index} />
       </Routes>
       <Footer />
     </Router>
