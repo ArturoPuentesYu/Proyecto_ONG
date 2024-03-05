@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require("express");
 const { MongoClient } = require("mongodb");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
-const url = "mongodb+srv://lectura:lectura1234@clusterprueba.esmqyee.mongodb.net/?retryWrites=true&w=majority";
-const bbdd = "ong";
+const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@clusterprueba.esmqyee.mongodb.net/?retryWrites=true&w=majority`;
+const bbdd = process.env.DB_NAME;
 const bodyParser = require("body-parser");
 const jwt = require('jsonwebtoken');
 
