@@ -2,6 +2,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'
 import { useState, useEffect } from "react";
 import { Spinner, Container } from "react-bootstrap";
+import { Tooltip } from 'react-tooltip'
 // import CategoryFilter from '../../components/filtro_categoria';
 
 type Categoria = 'Artístico' | 'Cultural' | 'Ocio y Tiempo Libre' | 'Educativo' | 'Diversidad';
@@ -37,10 +38,16 @@ const calendario = () => {
                 let t = data.map((evento: any) => {
                     if (evento.visible) {
                         const configuracionColor = colorPorCategoria[evento.categoria as Categoria];
+                        const categoria = evento.categoria.trim()
+                        console.log(categoria.trim())
                         return {
                             ...evento,
                             color: configuracionColor.color,
                             textColor: configuracionColor.textColor,
+                            extendedProps: {
+                                "data-tooltip-id": "tooltip-"+categoria,
+                                "data-tooltip-content":"Hello to you too!"
+                            }
                         };
                     }
                 });
@@ -77,7 +84,23 @@ const calendario = () => {
                     center: ''
                 }}
                 initialEvents={arrayFechas}
+                eventDidMount={(arg) => {
+                    arg.event.setExtendedProp('data-tooltip-id', arg.event.extendedProps.categoria);
+                    arg.event.setExtendedProp('data-tooltip-content', arg.event.extendedProps.categoria);
+                    // data-tooltip-content="Hello to you too!"
+                    console.log(arg.event.extendedProps)
+                    console.log(arg.event.source)
+                }}
             />
+            <Tooltip id="tooltip-Artístico" >
+                <p>Artístico</p>
+            </Tooltip>
+            <Tooltip id="tooltip-Cultural" >
+                <p>Cultura</p>
+            </Tooltip>
+            <Tooltip id="tooltip-OcioyTiempoLibre" >
+                <p>Ocio y Tiempo Libre</p>
+            </Tooltip>
         </Container>
     </main>);
 }
