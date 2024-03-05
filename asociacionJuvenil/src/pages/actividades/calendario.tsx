@@ -2,7 +2,6 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'
 import { useState, useEffect } from "react";
 import { Spinner, Container } from "react-bootstrap";
-import 'react-tooltip/dist/react-tooltip.css'
 // import CategoryFilter from '../../components/filtro_categoria';
 
 type Categoria = 'Artístico' | 'Cultural' | 'Ocio y Tiempo Libre' | 'Educativo' | 'Diversidad';
