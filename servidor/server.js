@@ -1,6 +1,5 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
-const mongoose = require('mongoose');
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const url = "mongodb+srv://lectura:lectura1234@clusterprueba.esmqyee.mongodb.net/?retryWrites=true&w=majority";

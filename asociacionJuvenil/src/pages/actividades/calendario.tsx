@@ -2,6 +2,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid'
 import { useState, useEffect } from "react";
 import { Spinner, Container } from "react-bootstrap";
+import 'react-tooltip/dist/react-tooltip.css'
 // import CategoryFilter from '../../components/filtro_categoria';
 
 type Categoria = 'Artístico' | 'Cultural' | 'Ocio y Tiempo Libre' | 'Educativo' | 'Diversidad';
@@ -40,7 +41,7 @@ const calendario = () => {
                         return {
                             ...evento,
                             color: configuracionColor.color,
-                            textColor: configuracionColor.textColor
+                            textColor: configuracionColor.textColor,
                         };
                     }
                 });
@@ -77,7 +78,6 @@ const calendario = () => {
                     center: ''
                 }}
                 initialEvents={arrayFechas}
-
             />
         </Container>
     </main>);
