@@ -1,3 +1,69 @@
-main {
-    width: 70%;
+.carousel-actividades-pasadas .carousel, .carousel-actividades-pasadas .slide {
+    height: 50%;
+    max-height: 50%;
+    width: 50%;
+    max-width: 50%;
+    justify-content: center;
+}
+
+.carousel-actividades-pasadas .carousel-inner, .carousel-actividades-pasadas .text-center{
+    justify-content: center;
+    text-align: center;
+}
+.carousel-actividades-pasadas .carousel-indicators {
+    position: unset;
+}
+
+.carousel-actividades-pasadas img {
+    width: 50%;
+    height: auto;
+    text-align: center;
+}
+
+@media (768px > width <= 992px) {
+    .carousel-actividades-pasadas .carousel, .carousel-actividades-pasadas .slide {
+        height: 60%;
+        max-height: 60%;
+        width: 60%;
+        max-width: 60%;
+        justify-content: center;
+    }
+    
+    .carousel-actividades-pasadas .carousel-inner, .carousel-actividades-pasadas .text-center{
+        justify-content: center;
+        text-align: center;
+    }
+    .carousel-actividades-pasadas .carousel-indicators {
+        position: unset;
+    }
+    
+    .carousel-actividades-pasadas img {
+        width: 30%;
+        height: auto;
+        text-align: center;
+    }
+}
+
+@media (width <= 768px) {
+    .carousel-actividades-pasadas .carousel, .carousel-actividades-pasadas .slide {
+        height: 90%;
+        max-height: 90%;
+        width: 90%;
+        max-width: 90%;
+        justify-content: center;
+    }
+    
+    .carousel-actividades-pasadas .carousel-inner, .carousel-actividades-pasadas .text-center{
+        justify-content: center;
+        text-align: center;
+    }
+    .carousel-actividades-pasadas .carousel-indicators {
+        position: unset;
+    }
+    
+    .carousel-actividades-pasadas img {
+        width: 70%;
+        height: auto;
+        text-align: center;
+    }
 }

@@ -8,6 +8,7 @@ import Footer from './components/footer/footer';
 import PanelAdmin from './pages/administracion/panelAdministracion';
 import PanelAdminsitracion from './pages/administracion/panelAdministracion';
 import Calendario from './pages/actividades/calendario';
+import Actividades_Pasadas from './pages/actividades/actividades_pasadas';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -31,7 +32,7 @@ function App() {
         <Route path="/Proyectos/Batucada_batucan" Component={Index} />
 
         <Route path="/Actividades/Calendario" Component={Calendario} />
-        <Route path="/Actividades/Actividades_pasadas" Component={Index} />
+        <Route path="/Actividades/Actividades_pasadas" Component={Actividades_Pasadas} />
         <Route path="/Actividades/Neuronizate" Component={Index} />
         <Route path="/Actividades/Diversificate" Component={Index} />
         <Route path="/Actividades/Grafitis" Component={Index} />

@@ -125,9 +125,9 @@ const Quienes_somos = () => {
                 </section>
             </Row>
             <Row>
-                <section className='mb-3'>
+                <section className='mb-3 carousel-actividades-pasadas'>
                     <h2 className='mb-3'>Colaboraciones</h2>
-                    <Carousel imagenes={QUIENES_SOMOS[0].COLABORACIONES}></Carousel>
+                    <Carousel slide={true} variant="dark" clases="mx-auto mb-2" imagenes={QUIENES_SOMOS[0].COLABORACIONES}></Carousel>
                 </section>
             </Row>
         </Container>

@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import logoBrand from '/logoAJ3C.png'
 import './nav.css'
+import logo from '/LogoVectorizado2.svg'
 import { useState, useEffect } from 'react';
 import { AlignDirection } from 'react-bootstrap/esm/types';
 
@@ -37,7 +37,7 @@ function NavBarra() {
       <Container>
         <Navbar.Brand href='/'> <img
               alt="Asociación Juvenil Tres Cantos"
-              src={logoBrand}
+              src={logo}
               width="42"
               height="40"
               className="d-inline-block align-top"

@@ -5,6 +5,8 @@ import { Button, Card, Col, Container, Row, Spinner } from "react-bootstrap";
 function Edit_index_texts(props: any) {
   const arr = props.textos;
   const [editable, cambioEstado] = useState(true);
+  const [id, cambioID] = useState(0);
+  const [subId, cambioSubID] = useState(0);
 
   if (arr.length === 0) {
     return (
@@ -50,6 +52,9 @@ function Edit_index_texts(props: any) {
         <b>Importante</b><br />
         Aunque se habiliten varios cuadros de texto, editar solo 1, si no, solo se cambiar&aacute; el &uacute;ltimo cuadro de texto editado.
       </p>
+
+      {// Texto inicio
+      }
       <Container>
         <Card>
           <Card.Body>
@@ -58,14 +63,21 @@ function Edit_index_texts(props: any) {
               <textarea name="texto" rows={4} cols={60} disabled={editable} defaultValue={arr.INICIO.TEXTO_ONG}/>
               <Row className="my-3">
                 <Col className="text-center">
-                  <Button type={editable ? "button" : "submit"} onClick={editable? () => { cambioEstado(!editable)} : () => {}}>{editable ? "Editar texto" : "Guardar cambios"}</Button>
+                  <Button type={editable ? "button" : "submit"} 
+                    data-section-id={-1} data-item-id={-1}
+                    onClick={editable? () => { cambioEstado(!editable)} : () => {}}>
+                      {editable ? "Editar texto" : "Guardar cambios"}
+                  </Button>
                 </Col>
               </Row>
             </form>
           </Card.Body>
         </Card>
       </Container>
-      {arr.SECCIONES.map((section: any, index: number) => (
+
+      
+      { // Textos secundarios
+      arr.SECCIONES.map((section: any, index: number) => (
         <Container key={index} className="my-5">
           <Row>
             <h2>{section.titulo}</h2>
@@ -77,10 +89,18 @@ function Edit_index_texts(props: any) {
                   <Card.Body>
                     <Card.Title>{item.titulo}</Card.Title>
                     <form method="post" onSubmit={e => handleSubmit(e, index, subIndex)}>
+                      {
+                        // TOCAR EL DISABLED PARA QUITAR QUE SE HABILITEN TODOS.
+                        editable && id == index && subId == subIndex ? "" : ""
+                      }
                       <textarea className="w-100" name="texto" rows={5} disabled={editable} defaultValue={item.descripcion}/>
                       <Row className="my-3">
                         <Col className="text-center">
-                          <Button type={editable ? "button" : "submit"} data-section-id={index} data-item-id={subIndex} onClick={editable ? () => { cambioEstado(!editable) } : () => {}}>{editable ? "Editar texto" : "Guardar cambios"}</Button>
+                          <Button type={editable ? "button" : "submit"} 
+                            data-section-id={index} data-item-id={subIndex} 
+                            onClick={editable ? () => { cambioEstado(!editable) } : () => {}}>
+                              {editable ? "Editar texto" : "Guardar cambios"}
+                          </Button>
                         </Col>
                       </Row>
                     </form>
