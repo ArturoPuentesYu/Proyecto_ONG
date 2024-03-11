@@ -7,6 +7,9 @@ const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 const bbdd = process.env.DB_NAME;
 const bodyParser = require("body-parser");
 const jwt = require('jsonwebtoken');
+// Para websockets
+//const {Server} = require("ws");
+//const http = require("http");
 
 const app = express();
 app.use(cors());
@@ -14,7 +17,36 @@ app.use(cors());
 // Middleware para parsear el cuerpo de las solicitudes POST
 app.use(bodyParser.json());
 
+/*
+// WebSockets
+const servidor = http.createServer(app);
+const wsServer = new Server({port: 3001, servidor});
+const cliente = new Set();
+
+wsServer.on("connection", (ws) => {
+    console.log("Cliente conectado");
+    cliente.add(ws);
+
+    ws.on("close", () => {
+        console.log("Cliente desconectado");
+        cliente.delete(ws);
+    });
+
+    ws.onmessage = (mensaje) => {
+        console.log("MENSAJE server.js:" + mensaje.data)
+    }
+})
+
+const broadcast = (mensaje) => {
+    for(const cli of cliente){
+        if (cli.readyState == 1){
+            cli.send(mensaje);
+        }
+    }
+}
+*/
 app.get("/", async (req, res) => {
+    //broadcast("Un cliente se ha conectado a la pagina de inicio.");
     const cliente = new MongoClient(url);
     let t = "";
     try {

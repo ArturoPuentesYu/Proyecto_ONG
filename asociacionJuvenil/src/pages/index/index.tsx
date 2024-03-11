@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import IndexCards from "../../components/index_cards";
 import CarouselC from '../../components/carousel/carousel_sin_texto';
 import Spinner from 'react-bootstrap/Spinner';
+//import WebSocket from '../../components/websocket'
 
 
 function Index() {
@@ -83,6 +84,8 @@ function Index() {
                         </Col>
                     </Row>
                 </Container>
+                {//<WebSocket />
+                }
 
                 <CarouselC imagenes={textos.IMAGENES_CAROUSEL} width='w-100' />
 
