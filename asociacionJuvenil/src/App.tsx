@@ -18,6 +18,7 @@ function App() {
       <NavBarra />
       <Routes>
         <Route path="/" Component={Index} />
+        <Route path="/Inicio" Component={Index} />
         <Route path="/Administracion" Component={PanelAdminsitracion} />
         <Route path="/Administracion/panel" Component={PanelAdmin} />
 
