@@ -1,0 +1,22 @@
+User-agent:*
+Disallow: *
+Allow: /inicio
+Allow: /quienes_somos
+Allow: /Proyectos/Lgtbiq
+Allow: /Proyectos/Rincon_del_rabano
+Allow: /Proyectos/Batucada_batucan
+Allow: /Actividades/Calendario
+Allow: /Actividades/Actividades_pasadas
+Allow: /Actividades/Neuronizate
+Allow: /Actividades/Diversificate
+Allow: /Actividades/Grafitis
+Allow: /Formacion/Curso_premonis
+Allow: /Formacion/Curso_monitor
+Allow: /Formacion/Curso_arte_y_cultura
+Allow: /Formacion/Voluntariado
+Allow: /Formacion/Sexualidad
+
+
+
+
+Sitemap: ./sitemap.xml
