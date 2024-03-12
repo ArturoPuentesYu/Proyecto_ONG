@@ -3,7 +3,6 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import { useState, useEffect } from "react";
 import { Spinner, Container } from "react-bootstrap";
 import { Tooltip } from 'react-tooltip'
-import BotonFlotante from '../../components/botonFlotante/botonFlotante';
 // import CategoryFilter from '../../components/filtro_categoria';
 
 type Categoria = 'Artístico' | 'Cultural' | 'Ocio y Tiempo Libre' | 'Educativo' | 'Diversidad';
@@ -102,7 +101,6 @@ const calendario = () => {
             <Tooltip id="tooltip-OcioyTiempoLibre" >
                 <p>Ocio y Tiempo Libre</p>
             </Tooltip>
-            <BotonFlotante />
         </Container>
     </main>);
 }

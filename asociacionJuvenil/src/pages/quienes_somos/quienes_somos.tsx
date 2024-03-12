@@ -1,7 +1,6 @@
 import { Container, Row } from 'react-bootstrap'
 import './QUIENES_SOMOS.css'
 import Carousel from '../../components/carousel/carousel_sin_texto'
-import BotonFlotante from '../../components/botonFlotante/botonFlotante';
 
 const Quienes_somos = () => {
     const QUIENES_SOMOS = [
@@ -132,7 +131,6 @@ const Quienes_somos = () => {
                 </section>
             </Row>
         </Container>
-        <BotonFlotante />
       </main>
     )
 

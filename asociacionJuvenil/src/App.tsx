@@ -12,6 +12,7 @@ import Actividades_Pasadas from './pages/actividades/actividades_pasadas';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LGTBIQ from './pages/actividades/lgtbiq';
+import BotonFlotante from './components/botonFlotante/botonFlotante';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/Formacion/Sexualidad" Component={Index} />
         <Route path='*' Component={Index} />
       </Routes>
+      <BotonFlotante />
       <Footer />
     </Router>
   );
