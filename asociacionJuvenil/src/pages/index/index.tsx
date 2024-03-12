@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import IndexCards from "../../components/index_cards";
 import CarouselC from '../../components/carousel/carousel_sin_texto';
 import Spinner from 'react-bootstrap/Spinner';
+import BotonFlotante from '../../components/botonFlotante/botonFlotante';
 //import WebSocket from '../../components/websocket'
 
 
@@ -90,6 +91,7 @@ function Index() {
                 <CarouselC imagenes={textos.IMAGENES_CAROUSEL} width='w-100' />
 
                 <IndexCards cards={textos.SECCIONES} />
+                <BotonFlotante />
             </main>
         </>
     );

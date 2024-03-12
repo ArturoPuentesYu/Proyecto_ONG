@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import './css.css'
+import BotonFlotante from "../../components/botonFlotante/botonFlotante";
 
 const lgtbiq = () => {
 
@@ -29,6 +30,7 @@ const lgtbiq = () => {
             <Col><img src={datos.IMAGEN.src} alt={datos.IMAGEN.alt} width="100%" /></Col>
             <Col><p  dangerouslySetInnerHTML={{__html: datos.TEXTO}} /></Col>
         </Row>
+        <BotonFlotante />
     </main>);
 }
 

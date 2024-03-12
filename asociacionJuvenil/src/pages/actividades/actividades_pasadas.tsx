@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import Carousel from "../../components/carousel/carousel_sin_texto"
 import "./css.css"
+import BotonFlotante from "../../components/botonFlotante/botonFlotante";
 const actividades_pasadas = () => {
 
     const [act_pasadas, cambioActPasadas] = useState<any>([]);
@@ -22,12 +23,13 @@ const actividades_pasadas = () => {
         );
     }
 
-    return(<>
+    return(<Container>
         {act_pasadas.map((año: any, index: number) => <Container className="text-center carousel-actividades-pasadas">
             <h2>{año.TITULO}</h2>
             <Carousel slide={false} variant="dark" clases="mx-auto mb-2" key={index} imagenes={año.IMAGENES_CAROUSEL} />
         </Container>)}
-    </>);
+        <BotonFlotante />
+    </Container>);
 }
 
 export default actividades_pasadas;

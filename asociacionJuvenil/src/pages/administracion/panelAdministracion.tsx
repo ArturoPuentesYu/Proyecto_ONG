@@ -8,6 +8,7 @@ import PanelQuienesSomos from "./paneles/panelquienessomos";
 import PanelCalendario from "./paneles/panelcalendario";
 import PanelRedes from "./paneles/panelredes";
 import Login from "../../components/administracion/login";
+import BotonFlotante from "../../components/botonFlotante/botonFlotante";
 
 const PanelAdmin = () => {
     //Comprobamos que tenemos acceso a la información del token
@@ -128,8 +129,8 @@ const PanelAdmin = () => {
                         </Col>
                     </Row>
                 </Tab.Container>
+            <BotonFlotante />
             </Container>
-
         </>);
     }
 
