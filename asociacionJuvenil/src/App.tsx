@@ -11,6 +11,7 @@ import Calendario from './pages/actividades/calendario';
 import Actividades_Pasadas from './pages/actividades/actividades_pasadas';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LGTBIQ from './pages/actividades/lgtbiq';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/Formacion" Component={Index} />
         <Route path="/Actividades" Component={Index} />
         
-        <Route path="/Proyectos/Lgtbiq" Component={Index} />
+        <Route path="/Proyectos/Lgtbiq" Component={LGTBIQ} />
         <Route path="/Proyectos/Rincon_del_rabano" Component={Index} />
         <Route path="/Proyectos/Batucada_batucan" Component={Index} />
 

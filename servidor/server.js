@@ -111,6 +111,22 @@ app.get("/actividades_pasadas", async (req, res) => {
     cliente.close();
 })
 
+app.get("/lgtbiq", async (req, res) => {
+    const cliente = new MongoClient(url);
+    let t = "";
+    try {
+        await cliente.connect();
+        console.log("Conectado a la base de datos");
+        t = await cliente.db(bbdd).collection("lgtbiq").find({}).toArray();
+        //console.log(t);
+    } catch (error) {
+        console.log(error);
+    }
+    res.send(t);
+    console.log("contenido enviado");
+    cliente.close();
+})
+
 app.put("/", async (req, res) => {
 
     const descripcion = req.body.texto;
